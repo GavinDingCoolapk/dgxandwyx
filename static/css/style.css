@@ -1289,8 +1289,8 @@ button.search.icon-button i {
   }
 }
 .instagram .insta-item {
-  -ms-flex-preferred-size: 19%;
-  flex-basis: 19%;
+  -ms-flex-preferred-size: 20%;
+  flex-basis: auto;
 }
 .instagram .insta-item img {
   -webkit-transition: all 0.4s ease-in-out;
@@ -3406,7 +3406,7 @@ blockquote span {
 .error-wrap {
   background-size: cover;
   background-position: center center;
-  padding: 6.25rem 0 9.375rem;
+  padding: 6.25rem 0 20rem;
 }
 .error-wrap h1 {
   font-size: 11.9375rem;
