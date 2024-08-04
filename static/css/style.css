@@ -1025,7 +1025,7 @@ button.search.icon-button i {
 .canvas-menu .logo {
   margin-bottom: 5rem;
   margin-top: 3.125rem;
-  width: 15rem;
+  width: 12rem;
 }
 .logo img{
   max-width: 100%;
@@ -1176,7 +1176,7 @@ button.search.icon-button i {
   transition: all 0.4s ease-in-out;
 }
 .center-nav img {
-  max-width: 15rem;
+  max-width: 12rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-default .primary-nav .center-nav img, .dark-header .primary-nav .center-nav img {
