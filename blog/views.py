@@ -7,6 +7,10 @@ def index(request):
     return render(request, "index.html")
 
 
+def about(request):
+    return render(request, "about.html")
+
+
 def our_memories(request):
     return HttpResponse("this is the Our Memories page")
 

@@ -20,7 +20,8 @@ from blog import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('index/', views.index),
+    path('', views.index),
+    path('about', views.about)
     path('our_memories', views.our_memories),
     path('our_future', views.our_future),
 ]
