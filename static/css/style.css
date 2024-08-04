@@ -12,7 +12,7 @@ Tags: blog, magazine, news, minimal, personal blog, blogging
 1. General
 1.1 Boostrap Customize
 2. Common CSS
-3. Header 
+3. Header
 4. Footer
 5. Banner
 6. Blog
@@ -1025,9 +1025,11 @@ button.search.icon-button i {
 .canvas-menu .logo {
   margin-bottom: 5rem;
   margin-top: 3.125rem;
-  width: 100%;
+  width: 15rem;
 }
-
+.logo img{
+  max-width: 100%;
+}
 .vertical-menu {
   list-style: none;
   padding: 0;
@@ -1172,6 +1174,9 @@ button.search.icon-button i {
 .header-default .primary-nav .center-nav img, .dark-header .primary-nav .center-nav img {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+}
+.center-nav img {
+  max-width: 15rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-default .primary-nav .center-nav img, .dark-header .primary-nav .center-nav img {
