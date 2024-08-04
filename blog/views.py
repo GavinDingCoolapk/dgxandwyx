@@ -11,6 +11,10 @@ def about(request):
     return render(request, "about.html")
 
 
+def post(request):
+    return render(request, "post-style-1.html")
+
+
 def our_memories(request):
     return HttpResponse("this is the Our Memories page")
 
