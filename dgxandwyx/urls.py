@@ -20,7 +20,7 @@ from django.conf import settings
 from blog import views
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     path('', views.index),
     path('index.html', views.index),
