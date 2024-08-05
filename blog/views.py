@@ -36,6 +36,9 @@ def latest_post(request, num):
                  "author": post.author,
                  "body": post.body.split("\n"),
                  "image": post.image,
+                 "tag1": post.tag1,
+                 "tag2": post.tag2,
+                 "tag3": post.tag3,
                  }
     if post.image:
         post_info["image"] = "media/" + post.image.url
@@ -52,6 +55,9 @@ def spec_post(request, num):
                  "author": post.author,
                  "body": post.body.split("\n"),
                  "image": post.image,
+                 "tag1": post.tag1,
+                 "tag2": post.tag2,
+                 "tag3": post.tag3,
                  }
     if post.image:
         post_info["image"] = "media/" + post.image.url

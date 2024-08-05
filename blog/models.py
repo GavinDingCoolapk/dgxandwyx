@@ -31,4 +31,7 @@ class Post(models.Model):
     author = models.CharField(max_length=15, choices=c_auth, default="Gavin")
     body = models.TextField()
     image = models.ImageField(upload_to='blog/posts/%Y/%m/%d', blank=True)
+    tag1 = models.CharField(max_length=15, blank=True)
+    tag2 = models.CharField(max_length=15, blank=True)
+    tag3 = models.CharField(max_length=15, blank=True)
     post_style = models.IntegerField(choices=c_style, default=1)

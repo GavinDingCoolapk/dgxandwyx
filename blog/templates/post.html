@@ -153,9 +153,23 @@
                             {% endfor %}
                             <div class="post-tags my-3">
                                 <span>Tags:</span>
-                                <span><a href="#">Fashion</a></span>
-                                <span><a href="#">World</a></span>
-                                <span><a href="#">Lifestyle</a></span>
+                                {% if not tag1 %}
+                                    <span>None</span>
+                                {% else %}
+                                    {% with 'tags/'|add:tag1 as Tag1 %}
+                                        <span><a href="{{ Tag1 }}">{{ tag1 }}</a></span>
+                                    {% endwith %}
+                                    {% if tag2 %}
+                                        {% with 'tags/'|add:tag2 as Tag2 %}
+                                            <span><a href="{{ Tag2 }}">{{ tag2 }}</a></span>
+                                        {% endwith %}
+                                        {% if tag3 %}
+                                            {% with 'tags/'|add:tag3 as Tag3 %}
+                                                <span><a href="{{ Tag3 }}">{{ tag3 }}</a></span>
+                                            {% endwith %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
                             </div>
                         </div>
                     </article>
