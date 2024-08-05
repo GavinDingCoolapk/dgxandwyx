@@ -23,8 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     path('', views.index),
-    path('index.html', views.index),
-    path('latest_1', views.latest_post_1),
-    path('latest_2', views.latest_post_2),
+    path('index', views.index),
+    path('latest_posts', views.latest_posts),
+    re_path('latest_post_([1-9]+)', views.latest_post),
+    re_path('post_([0-9]+)', views.spec_post),
+    path('categories', views.categories),
     path('about.html', views.about),
 ]

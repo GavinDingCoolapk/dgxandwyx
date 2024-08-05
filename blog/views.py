@@ -22,40 +22,48 @@ def index(request):
     return render(request, "index.html", posts_info)
 
 
+def latest_posts(request):
+    return HttpResponse("this is the latest posts page")
+
+
+def latest_post(request, num):
+    post = models.Post.objects.order_by("-id")[int(num) - 1]
+    post_info = {"category": post.category,
+                 "title": post.title,
+                 "date": post.date,
+                 "author": post.author,
+                 "body": post.body.split("\n"),
+                 "image": post.image,
+                 }
+    if post.image:
+        post_info["image"] = "media/" + post.image.url
+    else:
+        post_info["image"] = ""
+    return render(request, "post-style-1.html", post_info)
+
+
+def spec_post(request, num):
+    post = models.Post.objects.get(id=num)
+    post_info = {"category": post.category,
+                 "title": post.title,
+                 "date": post.date,
+                 "author": post.author,
+                 "body": post.body.split("\n"),
+                 "image": post.image,
+                 }
+    if post.image:
+        post_info["image"] = "media/" + post.image.url
+    else:
+        post_info["image"] = ""
+    return render(request, "post-style-1.html", post_info)
+
+
+def categories(request):
+    return HttpResponse("this is the categories page")
+
+
 def about(request):
     return render(request, "about.html")
-
-
-def latest_post_1(request):
-    post = models.Post.objects.order_by("-id")[0]
-    post_info = {"category": post.category,
-                 "title": post.title,
-                 "date": post.date,
-                 "author": post.author,
-                 "body": post.body.split("\n"),
-                 "image": post.image,
-                 }
-    if post.image:
-        post_info["image"] = "media/" + post.image.url
-    else:
-        post_info["image"] = ""
-    return render(request, "post-style-1.html", post_info)
-
-
-def latest_post_2(request):
-    post = models.Post.objects.order_by("-id")[1]
-    post_info = {"category": post.category,
-                 "title": post.title,
-                 "date": post.date,
-                 "author": post.author,
-                 "body": post.body.split("\n"),
-                 "image": post.image,
-                 }
-    if post.image:
-        post_info["image"] = "media/" + post.image.url
-    else:
-        post_info["image"] = ""
-    return render(request, "post-style-1.html", post_info)
 
 
 def our_memories(request):

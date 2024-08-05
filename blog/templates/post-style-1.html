@@ -55,18 +55,19 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-10 mx-auto col-sm-12">
-                        <a href="signup.html" class="singup"><img src="{% static 'images/sign.png' %}" alt=""></a>
+                        <a href="https://www.instagram.com/gavinddgx/" class="singup">
+                            <img src="{% static 'images/sign.png' %}" alt=""></a>
 
                         <nav class="navbar navbar-expand-md">
                             <div class="navbar-brand mobile-logo">
-                                <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                                <a href="index"><img src="{% static 'images/logo.png' %}" alt=""></a>
                             </div>
 
                             <div class="collapse navbar-collapse">
                                 <!-- menus -->
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.html">Home</a>
+                                        <a class="nav-link" href="index">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="latest_posts"
@@ -94,7 +95,7 @@
                                     </li>
                                 </ul>
                                 <div class="center-nav">
-                                    <a href="index.html"><img src="{% static 'images/logo-lg.png' %}" alt="Logo Lg"></a>
+                                    <a href="index"><img src="{% static 'images/logo-lg.png' %}" alt="Logo Lg"></a>
                                 </div>
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
@@ -142,7 +143,7 @@
                             <div class="entry-header">
                                 <span class="entry-meta"><a href="category.html">{{ category }}</a></span>
                                 <h1 class="display-6">{{ title }}</h1>
-                                <span class="author-meta fs-sm">{{ date }} - by <a href="author.html">{{ author }}
+                                <span class="author-meta fs-sm">{{ date }} - by <a href="about.html">{{ author }}
                                     </a></span>
                             </div>
                             {% for para in body %}
@@ -159,11 +160,18 @@
 
                     <div class="about-author post-container rounded p-5 text-center">
                         <div class="author-img">
-                            <img class="circle" width="90" src="{% static 'images/author-2.png' %}" alt="">
+                            {% if author == "Gavin" %}
+                                <img class="circle" width="90" src="{% static 'images/gavin.png' %}" alt="">
+                            {% else %}
+                                <img class="circle" width="90" src="{% static 'images/asinia.png' %}" alt="">
+                            {% endif %}
                         </div>
                         <h4 class="my-4">{{ author }}</h4>
-                        <p>Nam sit amet suscipit orci, ac volutpat metus. Nam pharetra, dolor quis interdum egestas,
-                            eros augue semper erat, at dictum justo elit non nisl. Aliquam vestibulum. </p>
+                            {% if author == "Gavin" %}
+                                <p>It's Gavin here!</p>
+                            {% else %}
+                                <p>It's Asinia here!</p>
+                            {% endif %}
                         <div class="social-share">
                             <span><a href="https://www.instagram.com/gavinddgx/"><i class="fab fa-instagram"></i></a></span>
                         </div>
@@ -224,7 +232,7 @@
                 <div class="col-lg-8 col-sm-7">
                     <nav class="widget footer-nav text-sm-center">
                         <ul>
-                            <li><a href="index.html">home</a></li>
+                            <li><a href="index">home</a></li>
                             <li><a href="latest_posts">Latest</a></li>
                             <li><a href="about.html">About Us</a></li>
                         </ul>
@@ -252,7 +260,7 @@
         <nav>
             <ul class="vertical-menu">
                 <li class="active">
-                    <a href="index.html">Home</a>
+                    <a href="index">Home</a>
                 </li>
                 <li><a href="latest_posts">Posts</a>
                     <ul class="submenu">
