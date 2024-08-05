@@ -130,81 +130,58 @@
     </header>
     <!--Header/-->
 
-    <div class="single-post">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="post-quote alignfull my-5">
-                        <div class="single-quote">
-                            <div class=" col-lg-8 col-sm-10 test mx-auto text-center ">
-                                <h2>you can't live your life for other people. you've got to do what's right
-                                    for you, even if it
-                                    hurts some people you love.</h2>
-                                <p class="fs-sm">Rita Mae Brown</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    {% if image %}
+        <div class="jarallax promo-parallax" style="background-image: url({% static image %});"></div>
+    {% else %}
+        <div class="jarallax promo-parallax" style="background-image: url({% static 'images/default.jpg' %});">
     </div>
-    <div class="about-details py-10">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-sm-8">
-                    <div class="author d-sm-flex left-line">
-                        <div class="author-img">
-                            <a href="author.html"><img src="{% static 'images/about.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="author-content ps-5">
-                            <div class="auth-inner">
-                                <h3>Lora Palmer</h3>
-                                <p>Quisque blandit suscipit tempus. Donec commodo magna erat, a interdum sem facilisis
-                                    ut. Suspendisse convallis justo risus, id molestie nisl lobortis ac. Nulla a nisl
-                                    semper, condimentum eros a, malesuada dui. Aenean et sapien diam. Quisque
-                                    scelerisque, diam vitae posuere tincidunt, leo nibh tincidunt augue.</p>
-                            </div>
-                            <span class="d-block mt-5 text-primary text-uppercase">15 posts published</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-4">
-                    <aside class="sidebar ps-5">
-                        <div class="widget auth-social">
-                            <h3>Social</h3>
-                            <ul>
-                                <li><a href="#">Instagram</a></li>
-                                <li><a href="#">facebook</a></li>
-                                <li><a href="#">Pinterest</a></li>
-                                <li><a href="#">Twitter</a></li>
-                            </ul>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="newsletter bg-pink mx-4 py-10" style="background-image: url('images/heart-bg.png');">
+    {% endif %}
+    <main class="main-content py-10">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-9 text-center mx-auto px-5">
-                    <h2 class="sec-title">Lets Become More Closer for Each Other</h2>
-                    <p>A great book should leave you with many experiences, and slightly exhausted at
-                        the end. You live several lives while reading</p>
+                <div class="col-12">
+                    <article class="single-post post">
+                        <div class="entry-content">
+                            <div class="entry-header">
+                                <span class="entry-meta"><a href="category.html">{{ category }}</a></span>
+                                <h1 class="display-6">{{ title }}</h1>
+                                <span class="author-meta fs-sm">{{ date }} - by <a href="about.html">{{ author }}
+                                    </a></span>
+                            </div>
+                            {% for para in body %}
+                            <p>{{ para }}</p>
+                            {% endfor %}
+                            <div class="post-tags my-3">
+                                <span>Tags:</span>
+                                <span><a href="#">Fashion</a></span>
+                                <span><a href="#">World</a></span>
+                                <span><a href="#">Lifestyle</a></span>
+                            </div>
+                        </div>
+                    </article>
 
-                    <form class="form-inline d-sm-flex justify-content-between mt-5">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                    <div class="about-author post-container rounded p-5 text-center">
+                        <div class="author-img">
+                            {% if author == "Gavin" %}
+                                <img class="circle" width="90" src="{% static 'images/gavin.png' %}" alt="">
+                            {% else %}
+                                <img class="circle" width="90" src="{% static 'images/asinia.png' %}" alt="">
+                            {% endif %}
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        <h4 class="my-4">{{ author }}</h4>
+                            {% if author == "Gavin" %}
+                                <p>It's Gavin here!</p>
+                            {% else %}
+                                <p>It's Asinia here!</p>
+                            {% endif %}
+                        <div class="social-share">
+                            <span><a href="https://www.instagram.com/gavinddgx/"><i class="fab fa-instagram"></i></a></span>
                         </div>
-                        <button type="submit" class="btn btn-dark">Subscribe</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <div class="instagram border-top py-10">
         <div class="container-xl">

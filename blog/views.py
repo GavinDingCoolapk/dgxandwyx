@@ -23,7 +23,9 @@ def index(request):
 
 
 def latest_posts(request):
-    return HttpResponse("this is the latest posts page")
+    posts = models.Post.objects.order_by("-id")
+    posts_info = {"posts": posts}
+    return render(request, "latest_posts.html", posts_info)
 
 
 def latest_post(request, num):
@@ -39,7 +41,7 @@ def latest_post(request, num):
         post_info["image"] = "media/" + post.image.url
     else:
         post_info["image"] = ""
-    return render(request, "post-style-1.html", post_info)
+    return render(request, "post.html", post_info)
 
 
 def spec_post(request, num):
@@ -55,11 +57,19 @@ def spec_post(request, num):
         post_info["image"] = "media/" + post.image.url
     else:
         post_info["image"] = ""
-    return render(request, "post-style-1.html", post_info)
+    return render(request, "post.html", post_info)
 
 
 def categories(request):
     return HttpResponse("this is the categories page")
+
+
+def best_wishes(request):
+    return HttpResponse("this is the best wishes page")
+
+
+def our_collection(request):
+    return HttpResponse("this is the our collection page")
 
 
 def about(request):
@@ -72,3 +82,5 @@ def our_memories(request):
 
 def our_future(request):
     return HttpResponse("this is the Our Future page")
+
+

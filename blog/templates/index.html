@@ -92,6 +92,9 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="best_wishes">Best Wishes</a>
+                                    </li>
                                 </ul>
                                 <div class="center-nav">
                                     <a href="index"><img src="{% static 'images/logo-lg.png' %}" alt="Logo Lg"></a>
@@ -135,7 +138,7 @@
                     <div class="owl-carousel owl-theme" id="hero-slider-one">
                         <div class="item">
                             {% if not post1_image %}
-                                <div class="item-bg" style="background-image: url({% static 'images/hero-slide.jpg' %});"> </div>
+                                <div class="item-bg" style="background-image: url({% static 'images/default.jpg' %});"> </div>
                             {% else %}
                                 <div class="item-bg" style="background-image: url({% static post1_image %});"> </div>
                             {% endif %}
@@ -147,7 +150,7 @@
                         </div> <!-- Item End -->
                         <div class="item">
                             {% if not post2_image %}
-                                <div class="item-bg" style="background-image: url({% static 'images/hero-slide.jpg' %});"> </div>
+                                <div class="item-bg" style="background-image: url({% static 'images/default.jpg' %});"> </div>
                             {% else %}
                                 <div class="item-bg" style="background-image: url({% static post2_image %});"> </div>
                             {% endif %}
@@ -250,7 +253,7 @@
                         <li><a href="categories" class="dropdown-item">Categories</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Our Collection</a></li>
+                <li><a href="our_collection">Our Collection</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>

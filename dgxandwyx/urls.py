@@ -28,5 +28,7 @@ urlpatterns = [
     re_path('latest_post_([1-9]+)', views.latest_post),
     re_path('post_([0-9]+)', views.spec_post),
     path('categories', views.categories),
+    path('best_wishes', views.best_wishes),
+    path('our_collection', views.our_collection),
     path('about.html', views.about),
 ]
