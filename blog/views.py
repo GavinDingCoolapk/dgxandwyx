@@ -4,7 +4,23 @@ from blog import models
 
 
 def index(request):
-    return render(request, "index.html")
+    posts = models.Post.objects.all()
+    post1 = posts[0]
+    post2 = posts[1]
+    if post1.image:
+        post1_image = "media/" + post1.image.url
+    else:
+        post1_image = ""
+    if post2.image:
+        post2_image = "media/" + post2.image.url
+    else:
+        post2_image = ""
+    posts_info = {"post1_title": post1.title,
+                  "post1_image": post1_image,
+                  "post2_title": post2.title,
+                  "post2_image": post2_image,
+                  }
+    return render(request, "index.html", posts_info)
 
 
 def about(request):
@@ -12,7 +28,7 @@ def about(request):
 
 
 def latest_post(request):
-    post = models.Post.objects.get(id=1)
+    post = models.Post.objects.get()
     post_info = {"category": post.category,
                  "title": post.title,
                  "date": post.date,
