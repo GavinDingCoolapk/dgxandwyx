@@ -6,19 +6,13 @@
 <head>
     <meta charset="utf-8">
     <title>DGX & WYX</title>
-    <!-- SEO Meta Tags-->
-    <meta name="description" content="Amelie -  Blog & Magazine HTML5 Template">
-    <meta name="keywords"
-        content="blog, magazine, minimal, modern, bootstrap, responsive,  business, mobile, bootstrap 5, html5, css3, js, gallery, slider, touch, creative, clean, sass">
-    <meta name="author" content="Tortoiz Theme">
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
-    
-    
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -28,11 +22,9 @@
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 </head>
 
 <body>
-
     <!-- Preloader start-->
     <div id="preloader">
         <div class="preloader">
@@ -47,16 +39,11 @@
         <div class="main-overlay"></div>
         <div class="topbar">
             <div class="container-fluid">
-
                 <!-- Social Share -->
                 <div class="social-share">
                     <a href="https://www.instagram.com/gavinddgx/"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="header-buttons">
-                    <button class="search icon-button">
-                        <i class="fas fa-search"></i>
-                        search
-                    </button>
                     <button class="burger-menu icon-button">
                         <span class="burger-icon"> <i class="fa fa-bars"></i></span>
                     </button>
@@ -78,167 +65,43 @@
                             <div class="collapse navbar-collapse">
                                 <!-- menus -->
                                 <ul class="navbar-nav mx-auto">
-                                    <li class="nav-item dropdown active">
-                                        <a class="nav-link dropdown-toggle" href="index.html">Home </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="index.html">Home 01</a></li>
-                                            <li><a class="dropdown-item" href="index-2.html">Home 02</a></li>
-                                            <li><a class="dropdown-item" href="index-3.html">Home 03</a></li>
-                                            <li><a class="dropdown-item" href="index-4.html">Home 04</a></li>
-                                        </ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="post-style-1.html"
+                                        <a class="nav-link dropdown-toggle" href="latest_posts"
                                             id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
                                             aria-expanded="false">
-                                            The Blog
+                                            Posts
                                         </a>
                                         <ul class="dropdown-menu">
+                                            <li><a href="latest_posts" class="dropdown-item">Latest</a></li>
                                             <li class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle" href="#">Post
-                                                    Layout
-                                                </a>
+                                                <a class="dropdown-item dropdown-toggle" href="categories">Categories</a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="post-style-1.html" class="dropdown-item">Post Style
-                                                            1</a>
+                                                    <li><a href="categories/recent_events" class="dropdown-item">Recent
+                                                        Events</a>
                                                     </li>
-                                                    <li><a href="post-style-2.html" class="dropdown-item">Post Style
-                                                            2</a>
+                                                    <li><a href="categories/our_future" class="dropdown-item">Our
+                                                            Future</a>
                                                     </li>
-                                                    <li><a href="post-style-3.html" class="dropdown-item">Post Style
-                                                            3</a>
-                                                    </li>
-                                                    <li><a href="post-style-4.html" class="dropdown-item">Post Style
-                                                            4</a>
-                                                    </li>
-                                                    <li><a href="post-style-5.html" class="dropdown-item">Post Style
-                                                            5</a>
-                                                    </li>
-                                                    <li><a href="post-style-6.html" class="dropdown-item">Post Style
-                                                            6</a>
-                                                    </li>
-                                                    <li><a href="post-style-7.html" class="dropdown-item">Post Style
-                                                            7</a>
-                                                    </li>
-                                                    <li><a href="post-style-8.html" class="dropdown-item">Post Style
-                                                            8</a>
-                                                    </li>
-                                                    <li><a href="post-style-9.html" class="dropdown-item">Post Style
-                                                            9</a>
-                                                    </li>
-                                                    <li><a href="post-style-10.html" class="dropdown-item">Post Style
-                                                            10</a>
-                                                    </li>
-                                                    <li><a href="post-style-11.html" class="dropdown-item">Post Style
-                                                            11</a>
+                                                    <li><a href="categories/our_memories" class="dropdown-item">Our
+                                                            Memories</a>
                                                     </li>
                                                 </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle" href="#">Post Media Style</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="post-vimeo.html">Post Style
-                                                            Vimeo</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="post-youtube.html">Post Style
-                                                            Youtube</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="post-video-self.html">Post Style
-                                                            Self Video</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="post-audio-self.html">Post Style
-                                                            Self Audio</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="post-audio-soundcloud.html">Post
-                                                            Soundcloud</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle" href="#"> Inner Pages
-                                                </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="about.html" class="dropdown-item">About page</a></li>
-                                                    <li><a href="tags.html" class="dropdown-item">Tags page</a></li>
-                                                    <li><a href="author.html" class="dropdown-item">Author page</a>
-                                                    <li><a href="404.html" class="dropdown-item">404 page</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle" href="#"> Category Style
-                                                </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="category.html" class="dropdown-item">Category Style
-                                                            1</a></li>
-                                                    <li><a href="category-2.html" class="dropdown-item">Category Style
-                                                            2</a></li>
-                                                    <li><a href="category-3.html" class="dropdown-item">Category Style
-                                                            3</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html" class="dropdown-item">Contact page</a></li>
-                                            <li><a href="search-result.html" class="dropdown-item">Search Result
-                                                    page</a>
                                             </li>
                                         </ul>
-                                    </li><!--  the blog end -->
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="category.html">Trending</a>
                                     </li>
-
                                 </ul>
                                 <div class="center-nav">
                                     <a href="index.html"><img src="{% static 'images/logo-lg.png' %}" alt="Logo Lg"></a>
                                 </div>
                                 <ul class="navbar-nav mx-auto">
-                                    <li class="nav-item dropdown mega-nav">
-                                        <a class="nav-link dropdown-toggle" href="index.html">Featured </a>
-                                        <ul class="megamenu">
-                                            <li class="blog-item">
-                                                <div class="entry-thumb img-zoom">
-                                                    <a href="post-style-1.html"><img src="{% static 'images/b-5.jpg' %}"
-                                                            alt="Featured Post"></a>
-                                                </div>
-                                                <h3 class="mt-3"><a href="post-style-1.html">Do interesting things, and
-                                                        interesting
-                                                        things will happen</a></h3>
-                                            </li>
-                                            <li class="blog-item">
-                                                <div class="entry-thumb img-zoom">
-                                                    <a href="post-style-1.html"><img src="{% static 'images/b-3.jpg' %}"
-                                                            alt="Featured Post"></a>
-                                                </div>
-                                                <h3 class="mt-3"><a href="post-style-1.html">Do interesting things, and
-                                                        interesting
-                                                        things will happen</a></h3>
-                                            </li>
-                                            <li class="blog-item">
-                                                <div class="entry-thumb img-zoom">
-                                                    <a href="post-style-1.html"><img src="{% static 'images/b-2.jpg' %}"
-                                                            alt="Featured Post"></a>
-                                                </div>
-                                                <h3 class="mt-3"><a href="post-style-1.html">Do interesting things, and
-                                                        interesting
-                                                        things will happen</a></h3>
-                                            </li>
-                                            <li class="blog-item">
-                                                <div class="entry-thumb img-zoom">
-                                                    <a href="post-style-1.html"><img src="{% static 'images/b-1.jpg' %}"
-                                                            alt="Featured Post"></a>
-                                                </div>
-                                                <h3 class="mt-3"><a href="post-style-1.html">Do interesting things, and
-                                                        interesting
-                                                        things will happen</a></h3>
-                                            </li>
-                                        </ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="our_collection.html">Our Collection</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="about.html">About me</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contact</a>
+                                        <a class="nav-link" href="about.html">About Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -249,10 +112,6 @@
                                 </div>
                                 <!-- header buttons -->
                                 <div class="header-buttons">
-                                    <button class="search icon-button">
-                                        <i class="fas fa-search"></i>
-                                        search
-                                    </button>
                                     <button class="burger-menu icon-button">
                                         <span class="burger-icon"> <i class="fa fa-bars"></i></span>
                                     </button>
@@ -260,7 +119,7 @@
                             </div>
                         </nav>
                         <!-- header right section -->
-                        <a href="https://www.instagram.com/" class="nav-heart"><img src="{% static 'images/icon-2.png' %}" alt=""></a>
+                        <a href="https://www.instagram.com/gavinddgx/" class="nav-heart"><img src="{% static 'images/icon-2.png' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -281,8 +140,8 @@
                                 <div class="item-bg" style="background-image: url({% static post1_image %});"> </div>
                             {% endif %}
                             <div class="item-txt">
-                                <h1 class="sec-title mb-4"><a href="latest">{{ post1_title }}</a></h1>
-                                <a class="btn-unfill" href="latest">Take a Look <img
+                                <h1 class="sec-title mb-4"><a href="latest_1">{{ post1_title }}</a></h1>
+                                <a class="btn-unfill" href="latest_1">Take a Look <img
                                         src="{% static 'images/arrow-right.png' %}" alt=""> </a>
                             </div>
                         </div> <!-- Item End -->
@@ -293,14 +152,16 @@
                                 <div class="item-bg" style="background-image: url({% static post2_image %});"> </div>
                             {% endif %}
                             <div class="item-txt">
-                                <h1 class="sec-title mb-4"><a href="post-style-1.html">{{ post2_title }}</a></h1>
-                                <a class="btn-unfill" href="post-style-1.html">Take a Look <img
+                                <h1 class="sec-title mb-4"><a href="latest_2">{{ post2_title }}</a></h1>
+                                <a class="btn-unfill" href="latest_2">Take a Look <img
                                         src="images/arrow-right.png" alt=""> </a>
                             </div>
                         </div> <!-- Item End -->
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
     <div class="instagram border-top py-10">
         <div class="container-xl">
@@ -337,7 +198,6 @@
                         <img src="{% static 'images/insta-5.jpg' %}" class="img-fluid" alt="instgram">
                     </a>
                 </div>
-
             </div>
         </div>
     </div>
@@ -354,9 +214,9 @@
                 <div class="col-lg-8 col-sm-7">
                     <nav class="widget footer-nav text-sm-center">
                         <ul>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">Latest</a></li>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="latest_posts">Latest</a></li>
+                            <li><a href="about.html">About Us</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -370,22 +230,6 @@
     </footer>
     <!--Footer/-->
 
-    <div class="search-popup">
-        <!-- close button -->
-        <button type="button" class="btn-close" aria-label="Close"></button>
-        <!-- content -->
-        <div class="search-content">
-            <div class="text-center">
-                <h3 class="mb-4 mt-0">Press ESC to close the Search box.</h3>
-            </div>
-            <!-- form -->
-            <form class="d-flex search-form">
-                <input required class="form-control me-2" type="search" placeholder="Search and press enter ..."
-                    aria-label="Search">
-                <button class="btn-primary btn" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
     <!-- canvas menu -->
     <div class="canvas-menu d-flex align-items-end flex-column">
         <!-- close button -->
@@ -399,36 +243,15 @@
             <ul class="vertical-menu">
                 <li class="active">
                     <a href="index.html">Home</a>
+                </li>
+                <li><a href="latest_posts">Posts</a>
                     <ul class="submenu">
-                        <li><a href="index.html">Home 01</a></li>
-                        <li><a href="index-2.html">Home 02</a></li>
-                        <li><a href="index-3.html">Home 03</a></li>
-                        <li><a href="index-4.html">Home 04</a></li>
+                        <li><a href="latest_posts" class="dropdown-item">Latest</a></li>
+                        <li><a href="categories" class="dropdown-item">Categories</a></li>
                     </ul>
                 </li>
-
-                <li><a href="category.html">Features</a></li>
-                <li><a href="category.html">Trending</a></li>
-                <li><a href="category.html">Post Styles</a>
-                    <ul class="submenu">
-                        <li><a href="post-style-1.html" class="dropdown-item">Post Style 1</a></li>
-                        <li><a href="post-style-2.html" class="dropdown-item">Post Style 2</a></li>
-                        <li><a href="post-style-3.html" class="dropdown-item">Post Style 3</a></li>
-                        <li><a href="post-style-4.html" class="dropdown-item">Post Style 4</a></li>
-                        <li><a href="post-style-5.html" class="dropdown-item">Post Style 5</a></li>
-                        <li><a href="post-style-6.html" class="dropdown-item">Post Style 6</a></li>
-                        <li><a href="post-style-7.html" class="dropdown-item">Post Style 7</a></li>
-                        <li><a href="post-style-8.html" class="dropdown-item">Post Style 8</a></li>
-                        <li><a href="post-style-9.html" class="dropdown-item">Post Style 9</a></li>
-                        <li><a href="post-style-10.html" class="dropdown-item">Post Style 10</a>
-                        </li>
-                        <li><a href="post-style-11.html" class="dropdown-item">Post Style 11</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Our Collection</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
 
@@ -438,9 +261,7 @@
         </div>
     </div>
 
-
     <script src="{% static 'js/jquery.min.js' %}"></script>
-    
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/wow.min.js' %}"></script>

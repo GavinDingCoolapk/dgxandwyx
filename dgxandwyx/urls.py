@@ -24,8 +24,7 @@ urlpatterns = [
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     path('', views.index),
     path('index.html', views.index),
-    path('latest', views.latest_post),
+    path('latest_1', views.latest_post_1),
+    path('latest_2', views.latest_post_2),
     path('about.html', views.about),
-    path('our_memories', views.our_memories),
-    path('our_future', views.our_future),
 ]

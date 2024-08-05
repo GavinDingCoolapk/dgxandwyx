@@ -4,9 +4,8 @@ from blog import models
 
 
 def index(request):
-    posts = models.Post.objects.all()
-    post1 = posts[0]
-    post2 = posts[1]
+    post1 = models.Post.objects.order_by("-id")[0]
+    post2 = models.Post.objects.order_by("-id")[1]
     if post1.image:
         post1_image = "media/" + post1.image.url
     else:
@@ -27,16 +26,35 @@ def about(request):
     return render(request, "about.html")
 
 
-def latest_post(request):
-    post = models.Post.objects.get()
+def latest_post_1(request):
+    post = models.Post.objects.order_by("-id")[0]
     post_info = {"category": post.category,
                  "title": post.title,
                  "date": post.date,
                  "author": post.author,
                  "body": post.body.split("\n"),
-                 "para_num": len(post.body.split("\n")) // 2,
                  "image": post.image,
                  }
+    if post.image:
+        post_info["image"] = "media/" + post.image.url
+    else:
+        post_info["image"] = ""
+    return render(request, "post-style-1.html", post_info)
+
+
+def latest_post_2(request):
+    post = models.Post.objects.order_by("-id")[1]
+    post_info = {"category": post.category,
+                 "title": post.title,
+                 "date": post.date,
+                 "author": post.author,
+                 "body": post.body.split("\n"),
+                 "image": post.image,
+                 }
+    if post.image:
+        post_info["image"] = "media/" + post.image.url
+    else:
+        post_info["image"] = ""
     return render(request, "post-style-1.html", post_info)
 
 
