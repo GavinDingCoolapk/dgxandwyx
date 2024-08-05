@@ -59,33 +59,33 @@
 
                         <nav class="navbar navbar-expand-md">
                             <div class="navbar-brand mobile-logo">
-                                <a href="index"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                                <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
                             </div>
 
                             <div class="collapse navbar-collapse">
                                 <!-- menus -->
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index">Home</a>
+                                        <a class="nav-link" href="{% url 'index' %}">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="latest_posts"
+                                        <a class="nav-link dropdown-toggle" href="{% url 'latest_posts' %}"
                                             id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
                                             aria-expanded="false">
                                             Posts
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="latest_posts" class="dropdown-item">Latest</a></li>
+                                            <li><a href="{% url 'latest_posts' %}" class="dropdown-item">Latest</a></li>
                                             <li class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle" href="categories">Categories</a>
+                                                <a class="dropdown-item dropdown-toggle" href="{% url 'categories' %}">Categories</a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="categories/recent_events" class="dropdown-item">Recent
+                                                    <li><a href="{% url 'spec_category' 'Recent events' %}" class="dropdown-item">Recent
                                                         Events</a>
                                                     </li>
-                                                    <li><a href="categories/our_future" class="dropdown-item">Our
+                                                    <li><a href="{% url 'spec_category' 'Our future' %}" class="dropdown-item">Our
                                                             Future</a>
                                                     </li>
-                                                    <li><a href="categories/our_memories" class="dropdown-item">Our
+                                                    <li><a href="{% url 'spec_category' 'Our memories' %}" class="dropdown-item">Our
                                                             Memories</a>
                                                     </li>
                                                 </ul>
@@ -93,18 +93,18 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="best_wishes">Best Wishes</a>
+                                        <a class="nav-link" href="{% url 'best_wishes' %}">Best Wishes</a>
                                     </li>
                                 </ul>
                                 <div class="center-nav">
-                                    <a href="index"><img src="{% static 'images/logo-lg.png' %}" alt="Logo Lg"></a>
+                                    <a href="{% url 'index' %}"><img src="{% static 'images/logo-lg.png' %}" alt="Logo Lg"></a>
                                 </div>
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="our_collection.html">Our Collection</a>
+                                        <a class="nav-link" href="{% url 'our_collections' %}">Our Collections</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="about.html">About Us</a>
+                                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -143,9 +143,9 @@
                     <article class="single-post post">
                         <div class="entry-content">
                             <div class="entry-header">
-                                <span class="entry-meta"><a href="category.html">{{ category }}</a></span>
+                                <span class="entry-meta"><a href="{% url 'categories' %}">{{ category }}</a></span>
                                 <h1 class="display-6">{{ title }}</h1>
-                                <span class="author-meta fs-sm">{{ date }} - by <a href="about.html">{{ author }}
+                                <span class="author-meta fs-sm">{{ date }} - by <a href="{% url 'about' %}">{{ author }}
                                     </a></span>
                             </div>
                             {% for para in body %}
@@ -156,17 +156,11 @@
                                 {% if not tag1 %}
                                     <span>None</span>
                                 {% else %}
-                                    {% with 'tags/'|add:tag1 as Tag1 %}
-                                        <span><a href="{{ Tag1 }}">{{ tag1 }}</a></span>
-                                    {% endwith %}
+                                    <span><a href="{% url 'spec_tag' tag1 %}">{{ tag1 }}</a></span>
                                     {% if tag2 %}
-                                        {% with 'tags/'|add:tag2 as Tag2 %}
-                                            <span><a href="{{ Tag2 }}">{{ tag2 }}</a></span>
-                                        {% endwith %}
+                                        <span><a href="{% url 'spec_tag' tag2 %}">{{ tag2 }}</a></span>
                                         {% if tag3 %}
-                                            {% with 'tags/'|add:tag3 as Tag3 %}
-                                                <span><a href="{{ Tag3 }}">{{ tag3 }}</a></span>
-                                            {% endwith %}
+                                            <span><a href="{% url 'spec_tag' tag3 %}">{{ tag3 }}</a></span>
                                         {% endif %}
                                     {% endif %}
                                 {% endif %}
@@ -248,9 +242,8 @@
                 <div class="col-lg-8 col-sm-7">
                     <nav class="widget footer-nav text-sm-center">
                         <ul>
-                            <li><a href="index">home</a></li>
-                            <li><a href="latest_posts">Latest</a></li>
-                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="{% url 'index' %}">home</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -276,16 +269,16 @@
         <nav>
             <ul class="vertical-menu">
                 <li class="active">
-                    <a href="index">Home</a>
+                    <a href="{% url 'index' %}">Home</a>
                 </li>
-                <li><a href="latest_posts">Posts</a>
+                <li><a href="{% url 'latest_posts' %}">Posts</a>
                     <ul class="submenu">
-                        <li><a href="latest_posts" class="dropdown-item">Latest</a></li>
-                        <li><a href="categories" class="dropdown-item">Categories</a></li>
+                        <li><a href="{% url 'latest_posts' %}" class="dropdown-item">Latest</a></li>
+                        <li><a href="{% url 'categories' %}" class="dropdown-item">Categories</a></li>
                     </ul>
                 </li>
-                <li><a href="our_collection">Our Collection</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="{% url 'our_collections' %}">Our Collections</a></li>
+                <li><a href="{% url 'about' %">About Us</a></li>
             </ul>
         </nav>
 

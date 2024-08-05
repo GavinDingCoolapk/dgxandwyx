@@ -70,11 +70,23 @@ def categories(request):
     return HttpResponse("this is the categories page")
 
 
+def spec_category(request, cat_name):
+    return HttpResponse("this is the %s category page" % cat_name)
+
+
+def tags(request):
+    return HttpResponse("this is the tags page")
+
+
+def spec_tag(request, tag_name):
+    return HttpResponse("this is the %s tag page" % tag_name)
+
+
 def best_wishes(request):
     return HttpResponse("this is the best wishes page")
 
 
-def our_collection(request):
+def our_collections(request):
     return HttpResponse("this is the our collection page")
 
 
