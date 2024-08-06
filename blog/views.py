@@ -17,8 +17,10 @@ def index(request):
         post2_image = ""
     posts_info = {"post1_title": post1.title,
                   "post1_image": post1_image,
+                  "post1_category": post1.category,
                   "post2_title": post2.title,
                   "post2_image": post2_image,
+                  "post2_category": post2.category,
                   }
     return render(request, "index.html", posts_info)
 
