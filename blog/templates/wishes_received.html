@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>Thank you!</title>{% endblock %}
+
+{% block mainbody %}
+<div class="single-post-header mt-4">
+    <div class="container-fluid p-0">
+        <div class="row gx-lg-0">
+            <div class="col-lg-6 col-sm-6">
+                <div class="entry-thumb">
+                    <img class="img-fluid" src="{% static 'images/thanks2.jpg' %}" alt="Single Post">
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="sp-header p-5 text-center h-100 w-100 bg-gray d-table">
+                    <div class="sp-inder d-cel">
+                        <h1 class="display-3 mt-2 mb-3">Thank you!</h1>
+                        <h5 style="text-align:center">Your may soon check out your wishes on the previous page!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

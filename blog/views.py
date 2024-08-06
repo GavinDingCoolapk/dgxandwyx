@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from blog import models
 from django.db.models import Q
+from django.utils import timezone
 # Create your views here.
 
 
@@ -104,11 +105,18 @@ def spec_tag(request, tag_name):
 
 
 def best_wishes(request):
-    return HttpResponse("this is the best wishes page")
+    wishes = models.Wish.objects.filter(post=1).order_by("-id")
+    wish_list = {"wishes": wishes}
+    return render(request, "wishes.html", wish_list)
 
 
-def our_collections(request):
-    return HttpResponse("this is the our collection page")
+def send_wishes(request):
+    if request.method == "POST":
+        if request.POST["name"]:
+            wish = models.Wish.objects.create(name=request.POST["name"], content=request.POST["content"])
+        else:
+            wish = models.Wish.objects.create(content=request.POST["content"])
+        return render(request, "wishes_received.html")
 
 
 def about(request):

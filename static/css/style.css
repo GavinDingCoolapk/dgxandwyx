@@ -2715,7 +2715,7 @@ form .form-group textarea {
   }
 }
 .instagram ul li {
-  padding-right: 2.5rem;
+  padding-right: 0rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .instagram ul li {
@@ -2725,7 +2725,7 @@ form .form-group textarea {
 @media only screen and (max-width: 767px) {
   .instagram ul li {
     margin: 0.9375rem;
-    padding-right: 1.1rem;
+    padding-right: 0rem;
   }
 }
 .instagram ul li a {

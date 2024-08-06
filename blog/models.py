@@ -16,8 +16,15 @@ class Post(models.Model):
     title = models.CharField(max_length=150)
     date = models.DateField(default=timezone.now)
     author = models.CharField(max_length=15, choices=c_auth, default="Gavin")
-    body = models.TextField()
+    body = models.TextField(blank=True)
     image = models.ImageField(upload_to='blog/posts/%Y/%m/%d', blank=True)
     tag1 = models.CharField(max_length=15, blank=True)
     tag2 = models.CharField(max_length=15, blank=True)
     tag3 = models.CharField(max_length=15, blank=True)
+
+
+class Wish(models.Model):
+    name = models.CharField(max_length=20, default="Visitor")
+    date = models.DateField(default=timezone.now)
+    content = models.TextField()
+    post = models.IntegerField(default=0)

@@ -1,7 +1,7 @@
 ﻿{% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8">
@@ -76,25 +76,28 @@
                                         <a class="nav-link" href="{% url 'index' %}">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="{% url 'latest_posts' %}"
-                                            id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
-                                            aria-expanded="false">
-                                            Posts
-                                        </a>
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdown2" role="button"
+                                           data-bs-toggle="dropdown" aria-expanded="false">The Blog</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{% url 'latest_posts' %}" class="dropdown-item">Latest</a></li>
+                                            <li><a href="{% url 'latest_posts' %}" class="dropdown-item">Latest Posts</a></li>
                                             <li class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle" href="#">Categories</a>
+                                                <a class="dropdown-item dropdown-toggle">Categories</a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{% url 'spec_category' 'Recent events' %}" class="dropdown-item">Recent events</a></li>
                                                     <li><a href="{% url 'spec_category' 'Our future' %}" class="dropdown-item">Our future</a></li>
-                                                    <li><a href="{% url 'spec_category' 'Our memories' %}" class="dropdown-item">Our memories</a>
+                                                    <li><a href="{% url 'spec_category' 'Our memories' %}" class="dropdown-item">Our memories</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle">Tags</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{% url 'spec_tag' 'Places' %}" class="dropdown-item">Places</a></li>
+                                                    <li><a href="{% url 'spec_tag' 'Food' %}" class="dropdown-item">Food</a></li>
+                                                    <li><a href="{% url 'spec_tag' 'Music' %}" class="dropdown-item">Music</a></li>
+                                                    <li><a href="{% url 'spec_tag' 'Music' %}" class="dropdown-item">Articles</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'best_wishes' %}">Best Wishes</a>
                                     </li>
                                 </ul>
                                 <div class="center-nav">
@@ -102,7 +105,7 @@
                                 </div>
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'our_collections' %}">Our Collections</a>
+                                        <a class="nav-link" href="{% url 'best_wishes' %}">Wishes</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{% url 'about' %}">About Us</a>
@@ -273,9 +276,8 @@
                     <div class="social-share">
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-instagram"></i> Instagram
-                                </a>
+                                <a href="https://www.instagram.com/gavinddgx/">
+                                    <i class="fab fa-instagram"></i> Instagram</a>
                             </li>
                         </ul>
                     </div>
@@ -335,19 +337,8 @@
         <nav>
             <ul class="vertical-menu">
                 <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'latest_posts' %}">Posts</a>
-                    <ul class="submenu">
-                        <li><a href="{% url 'latest_posts' %}" class="dropdown-item">Latest</a></li>
-                        <li><a href="{% url 'spec_category' 'Recent events' %}" class="dropdown-item">
-                            Recent events</a></li>
-                        <li><a href="{% url 'spec_category' 'Our future' %}" class="dropdown-item">
-                            Our future</a></li>
-                        <li><a href="{% url 'spec_category' 'Our memories' %}" class="dropdown-item">
-                            Our memories</a></li>
-                    </ul>
-                </li>
-                <li><a href="{% url 'best_wishes' %}">Best Wishes</a></li>
-                <li><a href="{% url 'our_collections' %}">Our Collections</a></li>
+                <li><a href="{% url 'latest_posts' %}">Latest posts</a></li>
+                <li><a href="{% url 'best_wishes' %}">Wishes</a></li>
                 <li><a href="{% url 'about' %">About Us</a></li>
             </ul>
         </nav>
