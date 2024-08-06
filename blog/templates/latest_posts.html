@@ -31,7 +31,7 @@
                                 <a href="{% url 'spec_category' post.category %}">{{ post.category }}</a>
                             </span>
                             <h3 class="entry-title mb-4"><a href="{% url 'spec_post' post.id %}">{{ post.title }}</a></h3>
-                            <p>{{ post.body|truncatechars:30}}</p>
+                            <p>{{ post.body|truncatechars:90}}</p>
                             <a class="btn-unfill right" href="{% url 'spec_post' post.id %}">Take a Look <i class="fal fa-long-arrow-right"></i></a>
                         </div>
                     </article>
