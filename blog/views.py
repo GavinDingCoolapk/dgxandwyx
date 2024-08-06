@@ -77,10 +77,6 @@ def spec_post(request, num):
     return render(request, "post.html", post_info)
 
 
-def categories(request):
-    return HttpResponse("this is the categories page")
-
-
 def spec_category(request, cat_name):
     posts = models.Post.objects.filter(category=cat_name).order_by("-id")
     posts_info = {"posts": posts,
@@ -106,4 +102,7 @@ def our_collections(request):
 
 
 def about(request):
-    return render(request, "about.html")
+    number = {"gavin": len(models.Post.objects.filter(author="Gavin")),
+              "asinia": len(models.Post.objects.filter(author="Asinia"))
+              }
+    return render(request, "about.html", number)

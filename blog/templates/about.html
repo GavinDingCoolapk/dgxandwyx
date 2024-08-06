@@ -11,10 +11,10 @@
                 <div class="post-quote alignfull my-5">
                     <div class="single-quote">
                         <div class=" col-lg-8 col-sm-10 test mx-auto text-center ">
-                            <h2>you can't live your life for other people. you've got to do what's right
-                                for you, even if it
-                                hurts some people you love.</h2>
-                            <p class="fs-sm">Rita Mae Brown</p>
+                            <h2>Many years later, as he faced the firing squad,
+                                Colonel Aureliano Buendía was to remember that distant afternoon
+                                when his father took him to discover ice...</h2>
+                            <p class="fs-sm">Gabriel García Márquez</p>
                         </div>
                     </div>
                 </div>
@@ -28,17 +28,14 @@
             <div class="col-lg-9 col-sm-8">
                 <div class="author d-sm-flex left-line">
                     <div class="author-img">
-                        <a href="author.html"><img src="{% static 'images/about.jpg' %}" alt=""></a>
+                        <a href="author.html"><img src="{% static 'images/gavin_about.png' %}" alt=""></a>
                     </div>
                     <div class="author-content ps-5">
                         <div class="auth-inner">
-                            <h3>Lora Palmer</h3>
-                            <p>Quisque blandit suscipit tempus. Donec commodo magna erat, a interdum sem facilisis
-                                ut. Suspendisse convallis justo risus, id molestie nisl lobortis ac. Nulla a nisl
-                                semper, condimentum eros a, malesuada dui. Aenean et sapien diam. Quisque
-                                scelerisque, diam vitae posuere tincidunt, leo nibh tincidunt augue.</p>
+                            <h3>Gavin</h3>
+                            <p>It's Gavin here!</p>
                         </div>
-                        <span class="d-block mt-5 text-primary text-uppercase">15 posts published</span>
+                        <span class="d-block mt-5 text-primary text-uppercase">{{ gavin }} posts published</span>
                     </div>
                 </div>
             </div>
@@ -47,10 +44,7 @@
                     <div class="widget auth-social">
                         <h3>Social</h3>
                         <ul>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">facebook</a></li>
-                            <li><a href="#">Pinterest</a></li>
-                            <li><a href="#">Twitter</a></li>
+                            <li><a href="https://www.instagram.com/gavinddgx/">Instagram</a></li>
                         </ul>
                     </div>
                 </aside>
@@ -58,27 +52,36 @@
         </div>
     </div>
 </div>
-<section class="newsletter bg-pink mx-4 py-10" style="background-image: url('images/heart-bg.png');">
-    <div class="container-fluid">
+<div class="about-details py-10">
+    <div class="container">
         <div class="row">
-            <div class="col-xl-9 text-center mx-auto px-5">
-                <h2 class="sec-title">Lets Become More Closer for Each Other</h2>
-                <p>A great book should leave you with many experiences, and slightly exhausted at
-                    the end. You live several lives while reading</p>
-
-                <form class="form-inline d-sm-flex justify-content-between mt-5">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name" required>
+            <div class="col-lg-9 col-sm-8">
+                <div class="author d-sm-flex left-line">
+                    <div class="author-img">
+                        <a href="author.html"><img src="{% static 'images/asinia_about.png' %}" alt=""></a>
                     </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    <div class="author-content ps-5">
+                        <div class="auth-inner">
+                            <h3>Asinia</h3>
+                            <p>It's Asinia here!</p>
+                        </div>
+                        <span class="d-block mt-5 text-primary text-uppercase">{{ asinia }} posts published</span>
                     </div>
-                    <button type="submit" class="btn btn-dark">Subscribe</button>
-                </form>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+                <aside class="sidebar ps-5">
+                    <div class="widget auth-social">
+                        <h3>Social</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com/asinia_wang/">Instagram</a></li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <div class="instagram border-top py-10">
     <div class="container-xl">
