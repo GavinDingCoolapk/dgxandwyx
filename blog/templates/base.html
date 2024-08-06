@@ -142,6 +142,54 @@
     <!--Header/-->
     {% block mainbody %}
     {% endblock %}
+        <!--Instagram-->
+    <section class="instagram py-10">
+        <div class="container text-center">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="font-alt mb-4 display-1">instagram</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ins-item wow fadeIn" data-wow-offset="30" data-wow-duration="1s" data-wow-delay="0.15s">
+                        <a href="https://www.instagram.com/gavinddgx/"> <img src="{% static 'images/insta-1.jpg' %}" class="img-fluid mt-md-5" alt="instagram"></a>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ins-item wow fadeIn" data-wow-offset="30" data-wow-duration="1s" data-wow-delay="0.30s">
+                        <a href="https://www.instagram.com/asinia_wang/"> <img src="{% static 'images/insta-2.jpg' %}" class="img-fluid" alt="instagram"></a>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ins-item wow fadeIn" data-wow-offset="30" data-wow-duration="1s" data-wow-delay="0.45s">
+                        <a href="https://www.instagram.com/gavinddgx/"><img src="{% static 'images/insta-3.jpg' %}" class="img-fluid mt-md-5" alt="instagram"></a>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ins-item wow fadeIn" data-wow-offset="30" data-wow-duration="1s" data-wow-delay="1s">
+                       <a href="https://www.instagram.com/asinia_wang/"> <img src="{% static 'images/insta-4.jpg' %}" class="img-fluid" alt="instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-xl-5">
+                <div class="col-lg-12 mt-4 pt-2">
+                    <div class="social-share">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/gavinddgx/">
+                                    <i class="fab fa-instagram"></i> Instagram</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Instagram/-->
     <!--Footer-->
     <div class="search-popup">
         <!-- close button -->
@@ -160,26 +208,21 @@
             </form>
         </div>
     </div>
-    <footer class="footer">
+        <!--Footer-->
+    <footer class="footer footer-3 pink-bg">
         <div class="container">
-            <div class="row mt-3 mb-4">
-                <div class="col-lg-2 col-sm-3">
-                    <div class="widget social-share">
-                        <a href="https://www.instagram.com/gavinddgx/"><i class="fab fa-instagram"></i></a>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="footer-logo text-center">
+                        <a href="{% url 'index' %}"><img src="{% static 'images/logo-lg.png' %}" alt="" width="200"></a>
                     </div>
-                </div>
-                <div class="col-lg-8 col-sm-7">
-                    <nav class="widget footer-nav text-sm-center", style="text-align:center">
+                    <nav class="widget footer-nav text-center py-5">
                         <ul>
-                            <li><a href="{% url 'index' %}">home</a></li>
-                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About us</a></li>
                         </ul>
                     </nav>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <p class="m-3 small text-center">Copyright 2024 D&W. All rights by D&W.</p>
+                    <p class="mt-5 small text-center">Copyright 2024 D&W. All rights by D&W.</p>
                 </div>
             </div>
         </div>
@@ -200,7 +243,7 @@
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'latest_posts' %}">Latest posts</a></li>
                 <li><a href="{% url 'best_wishes' %}">Wishes</a></li>
-                <li><a href="{% url 'about' %">About Us</a></li>
+                <li><a href="{% url 'about' %}">About us</a></li>
             </ul>
         </nav>
 
