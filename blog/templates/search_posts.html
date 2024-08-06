@@ -1,7 +1,7 @@
 ﻿{% extends "base.html" %}
 {% load static %}
 
-{% block title %}<title>Latest posts</title>{% endblock %}
+{% block title %}<title>Search results - {{ key_word }}</title>{% endblock %}
 
 {% block mainbody %}
 <main class="main-content category-content py-5">
@@ -9,7 +9,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="post-tags-head mb-5 py-5 overly border-top">
-                    <span class="current">Latest</span>
+                    <span>Results:</span>
+                    <span class="current">{{ key_word }}</span>
                 </div>
             </div>
             {% for post in posts %}

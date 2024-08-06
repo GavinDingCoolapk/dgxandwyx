@@ -1,315 +1,121 @@
-﻿{% load static %}
+﻿{% extends "base.html" %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block title %}<title>About us</title>{% endblock %}
 
-<head>
-    <meta charset="utf-8">
-    <title>DGX & WYX</title>
-    <!-- Viewport-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
-
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-
-<body>
-    <!-- Preloader start-->
-    <div id="preloader">
-        <div class="preloader">
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <!-- Preloader end  -->
-
-    <!--Header-->
-    <header class="header header-default">
-        <div class="main-overlay"></div>
-        <div class="topbar">
-            <div class="container-fluid">
-                <!-- Social Share -->
-                <div class="social-share">
-                    <a href="https://www.instagram.com/gavinddgx/"><i class="fab fa-instagram"></i></a>
-                </div>
-                <div class="header-buttons">
-                    <button class="burger-menu icon-button">
-                        <span class="burger-icon"> <i class="fa fa-bars"></i></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="primary-nav sticky">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-10 mx-auto col-sm-12">
-                        <a href="https://www.instagram.com/gavinddgx/" class="singup"><img src="{% static 'images/sign.png' %}" alt=""></a>
-
-                        <nav class="navbar navbar-expand-md">
-                            <div class="navbar-brand mobile-logo">
-                                <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
-                            </div>
-
-                            <div class="collapse navbar-collapse">
-                                <!-- menus -->
-                                <ul class="navbar-nav mx-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'index' %}">Home</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="{% url 'latest_posts' %}"
-                                            id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
-                                            aria-expanded="false">
-                                            Posts
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="{% url 'latest_posts' %}" class="dropdown-item">Latest</a></li>
-                                            <li class="dropdown">
-                                                <a class="dropdown-item dropdown-toggle" href="{% url 'categories' %}">Categories</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="{% url 'spec_category' 'Recent events' %}" class="dropdown-item">Recent
-                                                        Events</a>
-                                                    </li>
-                                                    <li><a href="{% url 'spec_category' 'Our future' %}" class="dropdown-item">Our
-                                                            Future</a>
-                                                    </li>
-                                                    <li><a href="{% url 'spec_category' 'Our memories' %}" class="dropdown-item">Our
-                                                            Memories</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'best_wishes' %}">Best Wishes</a>
-                                    </li>
-                                </ul>
-                                <div class="center-nav">
-                                    <a href="{% url 'index' %}"><img src="{% static 'images/logo-lg.png' %}" alt="Logo Lg"></a>
-                                </div>
-                                <ul class="navbar-nav mx-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'our_collections' %}">Our Collections</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="header-right">
-                                <!-- Social Share -->
-                                <div class="social-share">
-                                    <a href="https://www.instagram.com/gavinddgx/"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <!-- header buttons -->
-                                <div class="header-buttons">
-                                    <button class="burger-menu icon-button">
-                                        <span class="burger-icon"> <i class="fa fa-bars"></i></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </nav>
-                        <!-- header right section -->
-                        <a href="https://www.instagram.com/gavinddgx/" class="nav-heart"><img src="{% static 'images/icon-2.png' %}" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--Header/-->
-
-    <div class="single-post">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="post-quote alignfull my-5">
-                        <div class="single-quote">
-                            <div class=" col-lg-8 col-sm-10 test mx-auto text-center ">
-                                <h2>you can't live your life for other people. you've got to do what's right
-                                    for you, even if it
-                                    hurts some people you love.</h2>
-                                <p class="fs-sm">Rita Mae Brown</p>
-                            </div>
+{% block mainbody %}
+<div class="single-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="post-quote alignfull my-5">
+                    <div class="single-quote">
+                        <div class=" col-lg-8 col-sm-10 test mx-auto text-center ">
+                            <h2>you can't live your life for other people. you've got to do what's right
+                                for you, even if it
+                                hurts some people you love.</h2>
+                            <p class="fs-sm">Rita Mae Brown</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="about-details py-10">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-sm-8">
-                    <div class="author d-sm-flex left-line">
-                        <div class="author-img">
-                            <a href="author.html"><img src="{% static 'images/about.jpg' %}" alt=""></a>
+</div>
+<div class="about-details py-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-sm-8">
+                <div class="author d-sm-flex left-line">
+                    <div class="author-img">
+                        <a href="author.html"><img src="{% static 'images/about.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="author-content ps-5">
+                        <div class="auth-inner">
+                            <h3>Lora Palmer</h3>
+                            <p>Quisque blandit suscipit tempus. Donec commodo magna erat, a interdum sem facilisis
+                                ut. Suspendisse convallis justo risus, id molestie nisl lobortis ac. Nulla a nisl
+                                semper, condimentum eros a, malesuada dui. Aenean et sapien diam. Quisque
+                                scelerisque, diam vitae posuere tincidunt, leo nibh tincidunt augue.</p>
                         </div>
-                        <div class="author-content ps-5">
-                            <div class="auth-inner">
-                                <h3>Lora Palmer</h3>
-                                <p>Quisque blandit suscipit tempus. Donec commodo magna erat, a interdum sem facilisis
-                                    ut. Suspendisse convallis justo risus, id molestie nisl lobortis ac. Nulla a nisl
-                                    semper, condimentum eros a, malesuada dui. Aenean et sapien diam. Quisque
-                                    scelerisque, diam vitae posuere tincidunt, leo nibh tincidunt augue.</p>
-                            </div>
-                            <span class="d-block mt-5 text-primary text-uppercase">15 posts published</span>
-                        </div>
+                        <span class="d-block mt-5 text-primary text-uppercase">15 posts published</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-4">
-                    <aside class="sidebar ps-5">
-                        <div class="widget auth-social">
-                            <h3>Social</h3>
-                            <ul>
-                                <li><a href="#">Instagram</a></li>
-                                <li><a href="#">facebook</a></li>
-                                <li><a href="#">Pinterest</a></li>
-                                <li><a href="#">Twitter</a></li>
-                            </ul>
-                        </div>
-                    </aside>
-                </div>
             </div>
-        </div>
-    </div>
-    <section class="newsletter bg-pink mx-4 py-10" style="background-image: url('images/heart-bg.png');">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-9 text-center mx-auto px-5">
-                    <h2 class="sec-title">Lets Become More Closer for Each Other</h2>
-                    <p>A great book should leave you with many experiences, and slightly exhausted at
-                        the end. You live several lives while reading</p>
-
-                    <form class="form-inline d-sm-flex justify-content-between mt-5">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <button type="submit" class="btn btn-dark">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="instagram border-top py-10">
-        <div class="container-xl">
-            <div class="text-center col-8 mx-auto pb-5 wow animated" data-wow-iteration="infinite"
-                data-wow-duration="1500ms">
-                <img src="{% static 'images/icon.png' %}" alt="icon">
-            </div>
-            <!-- images -->
-            <div class="insta-wrap mt-5 d-flex flex-wrap justify-content-between position-relative">
-                <!-- button -->
-                <a href="https://www.instagram.com/gavinddgx/" class="btn btn-primary">@Follow on Instagram</a>
-                <div class="insta-item">
-                    <a href="https://www.instagram.com/gavinddgx/">
-                        <img src="{% static 'images/insta-1.jpg' %}" class="img-fluid" alt="instgram">
-                    </a>
-                </div>
-                <div class="insta-item">
-                    <a href="https://www.instagram.com/gavinddgx/">
-                        <img src="{% static 'images/insta-2.jpg' %}" class="img-fluid" alt="instgram">
-                    </a>
-                </div>
-                <div class="insta-item">
-                    <a href="https://www.instagram.com/gavinddgx/">
-                        <img src="{% static 'images/insta-3.jpg' %}" class="img-fluid" alt="instgram">
-                    </a>
-                </div>
-                <div class="insta-item">
-                    <a href="https://www.instagram.com/gavinddgx/">
-                        <img src="{% static 'images/insta-4.jpg' %}" class="img-fluid" alt="instgram">
-                    </a>
-                </div>
-                <div class="insta-item">
-                    <a href="https://www.instagram.com/gavinddgx/">
-                        <img src="{% static 'images/insta-5.jpg' %}" class="img-fluid" alt="instgram">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Footer-->
-    <footer class="footer">
-        <div class="container">
-            <div class="row mt-3 mb-4">
-                <div class="col-lg-2 col-sm-3">
-                    <div class="widget social-share">
-                        <a href="https://www.instagram.com/gavinddgx/"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-sm-7">
-                    <nav class="widget footer-nav text-sm-center">
+            <div class="col-lg-3 col-sm-4">
+                <aside class="sidebar ps-5">
+                    <div class="widget auth-social">
+                        <h3>Social</h3>
                         <ul>
-                            <li><a href="{% url 'index' %}">home</a></li>
-                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">facebook</a></li>
+                            <li><a href="#">Pinterest</a></li>
+                            <li><a href="#">Twitter</a></li>
                         </ul>
-                    </nav>
-                </div>
+                    </div>
+                </aside>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <p class="m-3 small text-center">Copyright 2024 D&G. All rights by D&G.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--Footer/-->
-
-    <!-- canvas menu -->
-    <div class="canvas-menu d-flex align-items-end flex-column">
-        <!-- close button -->
-        <button type="button" class="btn-close" aria-label="Close"></button>
-        <!-- logo -->
-        <div class="logo">
-            <img src="{% static 'images/logo.png' %}" alt="Logo" />
-        </div>
-        <!-- menu -->
-        <nav>
-            <ul class="vertical-menu">
-                <li class="active">
-                    <a href="{% url 'index' %}">Home</a>
-                </li>
-                <li><a href="{% url 'latest_posts' %}">Posts</a>
-                    <ul class="submenu">
-                        <li><a href="{% url 'latest_posts' %}" class="dropdown-item">Latest</a></li>
-                        <li><a href="{% url 'categories' %}" class="dropdown-item">Categories</a></li>
-                    </ul>
-                </li>
-                <li><a href="{% url 'our_collections' %}">Our Collections</a></li>
-                <li><a href="{% url 'about' %">About Us</a></li>
-            </ul>
-        </nav>
-
-        <!-- Social Share -->
-        <div class="social-share w-100">
-            <a href="https://www.instagram.com/gavinddgx/"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
+</div>
+<section class="newsletter bg-pink mx-4 py-10" style="background-image: url('images/heart-bg.png');">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-9 text-center mx-auto px-5">
+                <h2 class="sec-title">Lets Become More Closer for Each Other</h2>
+                <p>A great book should leave you with many experiences, and slightly exhausted at
+                    the end. You live several lives while reading</p>
 
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/wow.min.js' %}"></script>
-    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
-    <script src="{% static 'js/jarallax.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}" defer></script>
-</body>
+                <form class="form-inline d-sm-flex justify-content-between mt-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-</html>
+<div class="instagram border-top py-10">
+    <div class="container-xl">
+        <div class="text-center col-8 mx-auto pb-5 wow animated" data-wow-iteration="infinite"
+            data-wow-duration="1500ms">
+            <img src="{% static 'images/icon.png' %}" alt="icon">
+        </div>
+        <!-- images -->
+        <div class="insta-wrap mt-5 d-flex flex-wrap justify-content-between position-relative">
+            <!-- button -->
+            <a href="https://www.instagram.com/gavinddgx/" class="btn btn-primary">@Follow on Instagram</a>
+            <div class="insta-item">
+                <a href="https://www.instagram.com/gavinddgx/">
+                    <img src="{% static 'images/insta-1.jpg' %}" class="img-fluid" alt="instgram">
+                </a>
+            </div>
+            <div class="insta-item">
+                <a href="https://www.instagram.com/gavinddgx/">
+                    <img src="{% static 'images/insta-2.jpg' %}" class="img-fluid" alt="instgram">
+                </a>
+            </div>
+            <div class="insta-item">
+                <a href="https://www.instagram.com/gavinddgx/">
+                    <img src="{% static 'images/insta-3.jpg' %}" class="img-fluid" alt="instgram">
+                </a>
+            </div>
+            <div class="insta-item">
+                <a href="https://www.instagram.com/gavinddgx/">
+                    <img src="{% static 'images/insta-4.jpg' %}" class="img-fluid" alt="instgram">
+                </a>
+            </div>
+            <div class="insta-item">
+                <a href="https://www.instagram.com/gavinddgx/">
+                    <img src="{% static 'images/insta-5.jpg' %}" class="img-fluid" alt="instgram">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

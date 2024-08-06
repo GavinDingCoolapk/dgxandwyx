@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from blog import models
+from django.db.models import Q
 # Create your views here.
 
 
@@ -20,6 +21,16 @@ def index(request):
                   "post2_image": post2_image,
                   }
     return render(request, "index.html", posts_info)
+
+
+def search_posts(request):
+    if request.method == "POST":
+        key_word = request.POST["key_word"]
+        posts = models.Post.objects.filter(title__contains=key_word).order_by("-id")
+        posts_info = {"posts": posts,
+                      "key_word": key_word,
+                      }
+        return render(request, "search_posts.html", posts_info)
 
 
 def latest_posts(request):
@@ -71,15 +82,19 @@ def categories(request):
 
 
 def spec_category(request, cat_name):
-    return HttpResponse("this is the %s category page" % cat_name)
-
-
-def tags(request):
-    return HttpResponse("this is the tags page")
+    posts = models.Post.objects.filter(category=cat_name).order_by("-id")
+    posts_info = {"posts": posts,
+                  "category": cat_name,
+                  }
+    return render(request, "category_posts.html", posts_info)
 
 
 def spec_tag(request, tag_name):
-    return HttpResponse("this is the %s tag page" % tag_name)
+    posts = models.Post.objects.filter(Q(tag1=tag_name) | Q(tag2=tag_name) | Q(tag3=tag_name)).order_by("-id")
+    posts_info = {"posts": posts,
+                  "tag": tag_name,
+                  }
+    return render(request, "tag_posts.html", posts_info)
 
 
 def best_wishes(request):
@@ -92,13 +107,3 @@ def our_collections(request):
 
 def about(request):
     return render(request, "about.html")
-
-
-def our_memories(request):
-    return HttpResponse("this is the Our Memories page")
-
-
-def our_future(request):
-    return HttpResponse("this is the Our Future page")
-
-
