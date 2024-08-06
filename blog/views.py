@@ -7,6 +7,7 @@ from django.db.models import Q
 def index(request):
     post1 = models.Post.objects.order_by("-id")[0]
     post2 = models.Post.objects.order_by("-id")[1]
+    post3 = models.Post.objects.order_by("-id")[2]
     if post1.image:
         post1_image = "media/" + post1.image.url
     else:
@@ -15,12 +16,19 @@ def index(request):
         post2_image = "media/" + post2.image.url
     else:
         post2_image = ""
+    if post3.image:
+        post3_image = "media/" + post3.image.url
+    else:
+        post3_image = ""
     posts_info = {"post1_title": post1.title,
                   "post1_image": post1_image,
                   "post1_category": post1.category,
                   "post2_title": post2.title,
                   "post2_image": post2_image,
                   "post2_category": post2.category,
+                  "post3_title": post3.title,
+                  "post3_image": post3_image,
+                  "post3_category": post3.category,
                   }
     return render(request, "index.html", posts_info)
 

@@ -200,6 +200,37 @@
                 </div>
             </div>
             {% endif %}
+            {% if post3_image %}
+            <div class="item py-10 overly" style="background-image: url({% static post3_image %});">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-sm-10 mx-auto text-center">
+                            <a class="entry-meta text-white" href="{% url 'spec_category' post3_category %}">
+                                {{ post3_category }}</a>
+                            <h1 class="my-5"><a class="text-white" href="{% url 'spec_latest_post' 3 %}">
+                                {{ post3_title }}</a></h1>
+                            <a href="{% url 'spec_latest_post' 3 %}" class="btn-unfill text-white">Take a Look <i
+                                    class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="item py-10 overly" style="background-image: url({% static 'images/default.jpg' %});">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-sm-10 mx-auto text-center">
+                            <a class="entry-meta text-white" href="{% url 'spec_category' post3_category %}">
+                                {{ post3_category }}</a>
+                            <h1 class="my-5"><a class="text-white" href="{% url 'spec_latest_post' 3 %}">
+                                {{ post3_title }}</a></h1>
+                            <a href="{% url 'spec_latest_post' 3 %}" class="btn-unfill text-white">Take a Look <i
+                                    class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </section>
     <!--Hero Slider/-->
@@ -221,7 +252,7 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="ins-item wow fadeIn" data-wow-offset="30" data-wow-duration="1s" data-wow-delay="0.30s">
-                        <a href="https://www.instagram.com/gavinddgx/"> <img src="{% static 'images/insta-2.jpg' %}" class="img-fluid" alt="instagram"></a>
+                        <a href="https://www.instagram.com/asinia_wang/"> <img src="{% static 'images/insta-2.jpg' %}" class="img-fluid" alt="instagram"></a>
 
                     </div>
                 </div>
@@ -233,7 +264,7 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="ins-item wow fadeIn" data-wow-offset="30" data-wow-duration="1s" data-wow-delay="1s">
-                       <a href="https://www.instagram.com/gavinddgx/"> <img src="{% static 'images/insta-4.jpg' %}" class="img-fluid" alt="instagram"></a>
+                       <a href="https://www.instagram.com/asinia_wang/"> <img src="{% static 'images/insta-4.jpg' %}" class="img-fluid" alt="instagram"></a>
                     </div>
                 </div>
             </div>
