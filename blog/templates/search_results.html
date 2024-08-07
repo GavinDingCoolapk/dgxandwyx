@@ -1,0 +1,99 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>{{ key_word }}</title>{% endblock %}
+
+{% block mainbody %}
+<main class="main-content tag-content py-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="post-tags-head pt-0 mb-5">
+                            <span class="current">{{ key_word }}</span>
+                            <span>- Search Results</span>
+                        </div>
+                        <div class="search-box mt-3 mb-5">
+                            <form class="input-group" action="{% url 'search_posts' %}" method="post">
+                                {% csrf_token %}
+                                <input required name = "key_word" type="text" class="form-control"
+                                       placeholder="key words..." maxlength="20">
+                                <button class="input-group-text btn btn-lg btn-dark text-white" type="submit">
+                                    Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    {% for post in posts %}
+                    <div class="col-lg-6">
+                        <article class="single-entry mb-5 wow fadeIn" data-wow-offset="30" data-wow-duration="1.15s"
+                            data-wow-delay="0.30s">
+                            <div class="entry-thumb mb-4">
+                                {% if post.image %}
+                                <a href="{% url 'spec_post' post.id %}"> <img src="{% static 'media/'|add:post.image.url %}"
+                                                                  class="img-fluid" alt="blog"></a>
+                                {% else %}
+                                <a href="{% url 'spec_post' post.id %}"> <img src="{% static 'images/default.jpg' %}"
+                                                                  class="img-fluid" alt="blog"></a>
+                                {% endif %}
+                                <div class="entry-share d-flex">
+                                    <a href="{% url 'spec_post' post.id %}"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="entry-content">
+                                <span class="entry-meta">
+                                    <a href="{% url 'spec_category' post.category %}">{{ post.category }}</a>
+                                </span>
+                                <h3 class="entry-title mb-4"><a href="{% url 'spec_post' post.id %}">{{ post.title }}</a></h3>
+                                <p>{{ post.body|truncatechars:90}}</p>
+                                <a class="btn-unfill right" href="{% url 'spec_category' post.category %}">Take a Look <i class="fal fa-long-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div> <!-- Single Post End -->
+                    {% endfor %}
+                </div>
+            </div><!--  col end -->
+            <div class="col-lg-4">
+                <aside class="sidebar left-line ps-lg-5 mt-sm-5 mt-lg-0">
+                    <div class="widget add">
+                        <a href="{% url 'best_wishes' %}" class="font-alt mb-4 display-1">Leave us your Best Wishes!</a>
+                    </div>
+                    <div class="widget post-widget">
+                        <div class="widget-title">
+                            <h2>Latest Posts</h2>
+                        </div>
+                        {% for latest_post in latest_posts %}
+                        <div class="d-flex align-items-center mb-5">
+                            <a href="{% url 'spec_post' latest_post.id %}">
+                                <img class="rounded-circle" src="{% static 'images/'|add:latest_post.author|add:'.png' %}" width="86" alt="Author image"></a>
+                            <div class="ps-3">
+                                <h4 class="title-sm">
+                                    <a href="{% url 'spec_post' latest_post.id %}">{{ latest_post.title }}</a>
+                                </h4>
+                                <span class="fs-ms text-muted">{{ latest_post.date }}</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="widget category-widget">
+                        <div class="widget-title">
+                            <h2>Categories</h2>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="{% url 'spec_category' 'Recent events' %}"><span>01</span>Recent events</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'spec_category' 'Our future' %}"><span>02</span>Our future</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'spec_category' 'Our memories' %}"><span>03</span>Our memories</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

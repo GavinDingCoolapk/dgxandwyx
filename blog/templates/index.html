@@ -238,12 +238,82 @@
     </section>
     <!--Hero Slider/-->
 
+
+    <section class="categories py-10">
+        <div class="container">
+            <div class="row gx-lg-5">
+                <div class="col-lg-12">
+                    <h2 class="sp-title">Categories</h2>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="single-entry text-center wow fadeInUp2" data-wow-offset="30" data-wow-duration="1s"
+                        data-wow-delay="0.15s">
+                        <div class="entry-thumb mb-4">
+                            <a href="{% url 'spec_category' 'Recent events' %}"> <img src="{% static 'images/recent_events.jpg' %}" class="img-fluid" alt="blog"></a>
+                            <div class="entry-share d-flex">
+                                <a href="{% url 'spec_category' 'Recent events' %}"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="fs-sm"><a href="{% url 'spec_category' 'Recent events' %}">Recent Events</a></h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="single-entry my-5 text-center wow fadeInUp2" data-wow-offset="30"
+                        data-wow-duration="1s" data-wow-delay="0.15s">
+                        <div class="entry-thumb mb-4">
+                            <a href="{% url 'spec_category' 'Our future' %}"> <img src="{% static 'images/our_future.jpg' %}" class="img-fluid" alt="blog"></a>
+                            <div class="entry-share d-flex">
+                                <a href="{% url 'spec_category' 'Our future' %}"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="fs-sm"><a href="category.html">Our Future</a></h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                    <div class="single-entry text-center wow fadeInUp2" data-wow-offset="30" data-wow-duration="1s"
+                        data-wow-delay="0.15s">
+                        <div class="entry-thumb mb-4">
+                            <a href="{% url 'spec_category' 'Our memories' %}"> <img src="{% static 'images/our_memories.jpg' %}" class="img-fluid" alt="blog"></a>
+                            <div class="entry-share d-flex">
+                                <a href="{% url 'spec_category' 'Our memories' %}"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="fs-sm"><a href="category.html">Our Memories</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial py-10">
+        <div class="owl-carousel owl-theme" id="testimonial-slider">
+            <div class="our_story">
+                <div class=" col-lg-8 col-sm-10 test mx-auto text-center ">
+                    <h2>Our story begins April 12th, 2024...</h2>
+                    <p class="fs-sm">half-officially</p>
+                </div>
+            </div>
+            <div class="our_story">
+                <div class=" col-lg-8 col-sm-10 test mx-auto text-center ">
+                    <h2>Actually, it dates back to the October 10th afternoon, 2022.</h2>
+                    <p class="fs-sm">Badminton!</p>
+                </div>
+            </div>
+            <div class="our_story">
+                <div class=" col-lg-8 col-sm-10 test mx-auto text-center ">
+                    <h2>Let's move forward together!</h2>
+                    <p class="fs-sm">D&W</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!--Instagram-->
     <section class="instagram py-10">
         <div class="container text-center">
             <div class="row mb-5">
                 <div class="col-12">
-                    <h2 class="font-alt mb-4 display-1">instagram</h2>
+                    <a href="https://www.instagram.com/gavinddgx/" class="font-alt mb-4 display-1">instagram</a>
                 </div>
             </div>
             <div class="row">
@@ -277,7 +347,7 @@
                         <ul class="list-inline">
                             <li class="list-inline-item">
                                 <a href="https://www.instagram.com/gavinddgx/">
-                                    <i class="fab fa-instagram"></i> Instagram</a>
+                                    <i class="fab fa-instagram"></i></a>
                             </li>
                         </ul>
                     </div>

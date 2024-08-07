@@ -44,11 +44,7 @@
 
                 <div class="about-author post-container rounded p-5 text-center">
                     <div class="author-img">
-                        {% if author == "Gavin" %}
-                            <img class="circle" width="90" src="{% static 'images/gavin.png' %}" alt="">
-                        {% else %}
-                            <img class="circle" width="90" src="{% static 'images/asinia.png' %}" alt="">
-                        {% endif %}
+                        <img class="circle" width="90" src="{% static 'images/'|add:author|add:'.png' %}" alt="">
                     </div>
                     <h4 class="my-4">{{ author }}</h4>
                         {% if author == "Gavin" %}

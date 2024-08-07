@@ -38,10 +38,12 @@ def search_posts(request):
     if request.method == "POST":
         key_word = request.POST["key_word"]
         posts = models.Post.objects.filter(title__contains=key_word).order_by("-id")
+        l_posts = models.Post.objects.all().order_by("-id")[:3]
         posts_info = {"posts": posts,
+                      "latest_posts": l_posts,
                       "key_word": key_word,
                       }
-        return render(request, "search_posts.html", posts_info)
+        return render(request, "search_results.html", posts_info)
 
 
 def latest_posts(request):
