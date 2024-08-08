@@ -242,6 +242,13 @@
             <ul class="vertical-menu">
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'latest_posts' %}">Latest posts</a></li>
+                <li><a href="/#category">Categories</a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'spec_category' 'Recent events' %}" class="dropdown-item">Recent events</a></li>
+                        <li><a href="{% url 'spec_category' 'Our future' %}" class="dropdown-item">Our future</a></li>
+                        <li><a href="{% url 'spec_category' 'Our memories' %}" class="dropdown-item">Our memories</a></li>
+                    </ul>
+                </li>
                 <li><a href="{% url 'best_wishes' %}">Wishes</a></li>
                 <li><a href="{% url 'about' %}">About us</a></li>
             </ul>
