@@ -26,5 +26,5 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('best_wishes', views.best_wishes, name='best_wishes'),
     path('wishes_sent', views.send_wishes, name='send_wishes'),
-    path('about.html', views.about, name='about'),
+    path('about', views.about, name='about'),
 ]
