@@ -68,14 +68,14 @@
 
                         <nav class="navbar navbar-expand-md">
                             <div class="navbar-brand mobile-logo">
-                                <a href="index.html"><img src="{% static 'images/logo-white.png' %}" alt=""></a>
+                                <a href="#"><img src="{% static 'images/logo-white.png' %}" alt=""></a>
                             </div>
 
                             <div class="collapse navbar-collapse">
                                 <!-- menus -->
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                                        <a class="nav-link" href="#">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" id="navbarDropdown2" role="button"
@@ -103,7 +103,7 @@
                                     </li>
                                 </ul>
                                 <div class="center-nav">
-                                    <a href="{% url 'index' %}"><img src="{% static 'images/logo-white.png' %}" alt="Logo Lg"></a>
+                                    <a href="#"><img src="{% static 'images/logo-white.png' %}" alt="Logo Lg"></a>
                                 </div>
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
@@ -180,7 +180,7 @@
     </section>
     <!--Hero Slider/-->
 
-    <section class="categories py-10">
+    <section class="categories py-10" id="category">
         <div class="container">
             <div class="row gx-lg-5">
                 <div class="col-lg-12">
@@ -207,7 +207,7 @@
                                 <a href="{% url 'spec_category' 'Our future' %}"><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <h4 class="fs-sm"><a href="category.html">Our Future</a></h4>
+                        <h4 class="fs-sm"><a href="{% url 'spec_category' 'Our future' %}">Our Future</a></h4>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-4">
@@ -219,7 +219,7 @@
                                 <a href="{% url 'spec_category' 'Our memories' %}"><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <h4 class="fs-sm"><a href="category.html">Our Memories</a></h4>
+                        <h4 class="fs-sm"><a href="{% url 'spec_category' 'Our memories' %}">Our Memories</a></h4>
                     </div>
                 </div>
             </div>
@@ -277,7 +277,7 @@
                                 </span>
                                 <h3 class="entry-title mb-4"><a href="{% url 'spec_post' latest_post.id %}">{{ latest_post.title }}</a></h3>
                                 <p>{{ post.body|truncatechars:90}}</p>
-                                <a class="btn-unfill" href="post-style-1.html">
+                                <a class="btn-unfill" href="{% url 'spec_post' latest_post.id %}">
                                     Take a Look <i class="fal fa-long-arrow-right"></i>
                                 </a>
                             </div>
@@ -352,11 +352,11 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="footer-logo text-center">
-                        <a href="{% url 'index' %}"><img src="{% static 'images/logo-lg.png' %}" alt="" width="200"></a>
+                        <a href="#"><img src="{% static 'images/logo-lg.png' %}" alt="" width="200"></a>
                     </div>
                     <nav class="widget footer-nav text-center py-5">
                         <ul>
-                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="#">Home</a></li>
                             <li><a href="{% url 'about' %}">About us</a></li>
                         </ul>
                     </nav>
@@ -396,7 +396,14 @@
         <nav>
             <ul class="vertical-menu">
                 <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'latest_posts' %}">Latest posts</a></li>
+                <li><a href="{% url 'latest_posts' %}">Latest posts</a>
+                <li><a href="#category"> Categories</a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'spec_category' 'Recent events' %}" class="dropdown-item">Recent events</a></li>
+                        <li><a href="{% url 'spec_category' 'Our future' %}" class="dropdown-item">Our future</a></li>
+                        <li><a href="{% url 'spec_category' 'Our memories' %}" class="dropdown-item">Our memories</a></li>
+                    </ul>
+                </li>
                 <li><a href="{% url 'best_wishes' %}">Wishes</a></li>
                 <li><a href="{% url 'about' %}">About us</a></li>
             </ul>
