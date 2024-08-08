@@ -1,7 +1,6 @@
 ﻿{% load static %}
 
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8">
@@ -23,6 +22,9 @@
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/amplitudejs@5.3.2/dist/amplitude.js"></script>
 
 </head>
 
@@ -288,7 +290,6 @@
                     <div class="widget add">
                         <a href="{% url 'best_wishes' %}" class="font-alt mb-4 display-1">Leave us your Best Wishes!</a>
                     </div>
-                    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
                     <div class="elfsight-app-4a93068a-9592-4b3c-935e-be0e89f7d3d6" data-elfsight-app-lazy></div>
                 </div>
             </div>
@@ -416,6 +417,8 @@
     <script src="{% static 'js/jarallax.min.js' %}"></script>
     <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}" defer></script>
+
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </body>
 
 </html>
