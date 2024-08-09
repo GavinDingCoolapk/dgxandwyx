@@ -12,7 +12,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
 
-
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -24,7 +23,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/amplitudejs@5.3.2/dist/amplitude.js"></script>
+            src="{% static 'js/amplitude.js' %}"></script>
 
 </head>
 
@@ -290,7 +289,7 @@
                     <div class="widget add">
                         <a href="{% url 'best_wishes' %}" class="font-alt mb-4 display-1">Leave us your Best Wishes!</a>
                     </div>
-                    <div class="elfsight-app-4a93068a-9592-4b3c-935e-be0e89f7d3d6"></div>
+                    <div id = "audio_player" class="elfsight-app-4a93068a-9592-4b3c-935e-be0e89f7d3d6" data-elfsight-app-lazy></div>
                 </div>
             </div>
         </div>
@@ -425,7 +424,7 @@
     <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}" defer></script>
 
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <script src="{% static 'js/platform.js' %}" data-use-service-core defer></script>
 </body>
 
 </html>

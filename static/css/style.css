@@ -29,7 +29,7 @@ Tags: blog, magazine, news, minimal, personal blog, blogging
 1. General
 ===========================================
 */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Maven+Pro&family=Roboto:wght@400;500&display=swap");
+@import 'font.css';
 @font-face {
   font-family: TheSecret;
   src: url("../webfonts/TheSecret-Regular.ttf");
