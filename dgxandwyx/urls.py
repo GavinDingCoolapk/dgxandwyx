@@ -26,5 +26,6 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('best_wishes', views.best_wishes, name='best_wishes'),
     path('wishes_sent', views.send_wishes, name='send_wishes'),
+    path('collections', views.collections, name='collections'),
     path('about', views.about, name='about'),
 ]

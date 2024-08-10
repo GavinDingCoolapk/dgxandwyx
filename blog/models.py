@@ -28,3 +28,13 @@ class Wish(models.Model):
     date = models.DateField(default=timezone.now)
     content = models.TextField()
     post = models.IntegerField(default=0)
+
+
+class Website(models.Model):
+    c_cat = [("GRE", "GRE"),
+             ("Other", "Other"),
+             ]
+    category = models.CharField(choices=c_cat, max_length=50)
+    title = models.CharField(max_length=100)
+    content = models.CharField(max_length=100)
+    link = models.CharField(max_length=1000)

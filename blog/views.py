@@ -101,6 +101,20 @@ def send_wishes(request):
         return render(request, "wishes_received.html")
 
 
+def collections(request):
+    collectionss = {}
+    categories = []
+    for cat in models.Website.objects.values("category").distinct():
+        collectionss[cat["category"]] = models.Website.objects.filter(category=cat["category"]).order_by("-id")
+        categories.append(cat["category"])
+    c = {"first_cat": categories[0],
+         "categories": categories[1:],
+         "collections": collectionss,
+         }
+    # return HttpResponse("hello")
+    return render(request, "collections.html", c)
+
+
 def about(request):
     number = {"gavin": len(models.Post.objects.filter(author="Gavin")),
               "asinia": len(models.Post.objects.filter(author="Asinia"))
