@@ -59,7 +59,7 @@
 						<ul class="transition_link m-0">
 							<li class="active mb-[7px]"><a class="text-dark-color" href="#home">Home</a></li>
 							<li class="mb-[7px]"><a class="text-dark-color" href="#collections">Collections</a></li>
-							<li class="mb-[7px]"><a class="text-dark-color" href="{% url 'index' %}">Back to Blog</a></li>
+							<li class="mb-[7px]"><a class="text-dark-color" href="{% url 'index' %}">Back</a></li>
 						</ul>
 					</div>
 					<div class="copyright w-full float-left">
@@ -75,16 +75,15 @@
 		<div class="elisc_tm_sidebar w-[370px] h-[100vh] fixed left-0 top-0 border-solid border-[rgba(85,82,124,.1)] border-r">
 			<div class="sidebar_inner w-full float-left h-auto clear-both text-center">
 				<div class="author w-full float-left pt-[60px]">
-					<div class="image relative w-[118px] inline-block">
-						<img class="relative opacity-0 min-w-full" src="{% static 'collections/images/1-1.jpg' %}" alt="" />
-						<div class="main absolute inset-0 bg-no-repeat bg-cover bg-center rounded-full" data-img-url="{% static 'collections/images/logo.png' %}"></div>
+					<div class="image relative inline-block">
+						<img class="relative w-full" src="{% static 'collections/images/logo.png' %}" alt="" />
 					</div>
 				</div>
 				<div class="menu scrollable w-full float-left">
 					<ul class="transition_link h-full flex items-center justify-center flex-col">
 						<li class="active mb-[15px]"><a href="#home">Home</a></li>
 						<li class="mb-[15px]"><a href="#collections">Collections</a></li>
-						<li class="mb-[15px]"><a href="{% url 'index' %}">Back to Blog</a></li>
+						<li class="mb-[15px]"><a href="{% url 'index' %}">Back</a></li>
 					</ul>
 				</div>
 				<div class="copyright absolute bottom-[50px]">
@@ -107,7 +106,7 @@
 							<div class="details w-full min-h-[100vh] flex items-center">
 								<div class="left w-1/2">
 									<div class="title w-full float-left mb-[21px]">
-										<h3 class="font-extrabold text-[60px] leading-[70px]">Welcome to<br><span class="text-blue-color">D&W</span>'s Collections!</br></h3>
+										<h3 class="font-extrabold text-[60px] leading-[70px]">Welcome to<br><span class="text-blue-color">D&W</span> Collections!</br></h3>
 										<h3 class="font-extrabold text-[60px] leading-[70px]">
 											<span class="cd-headline clip"> <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
 												<span class="blc">We've got</span>
@@ -142,7 +141,7 @@
 						<div class="tm_content w-full max-w-[1250px] h-auto clear-both my-0 mx-auto py-0 px-[20px]">
 							<div class="elisc_tm_service_title w-full float-left flex justify-between items-end">
 								<div class="elisc_tm_title w-auto float-left">
-									<span class="w-full float-left font-medium uppercase inline-block mb-[12px]">- D&W's Collections</span>
+									<span class="w-full float-left font-medium uppercase inline-block mb-[12px]">- D&W Collections</span>
 									<h3 class="text-[40px] font-extrabold">{{ key }}</h3>
 								</div>
 							</div>
