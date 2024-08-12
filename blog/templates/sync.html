@@ -8,21 +8,21 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<title>Our Collections</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'collections/images/apple-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'collections/images/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'collections/images/favicon-16x16.png' %}">
+	<title>Sync D&W</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'sync/images/apple-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'sync/images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'sync/images/favicon-16x16.png' %}">
 	<!-- STYLES -->
-	<link href="{% static 'collections/css/font1.css' %}" rel="stylesheet">
-	<link href="{% static 'collections/css/font2.css' %}" rel="stylesheet">
-	<link href="{% static 'collections/css/font3.css' %}" rel="stylesheet">
+	<link href="{% static 'sync/css/font1.css' %}" rel="stylesheet">
+	<link href="{% static 'sync/css/font2.css' %}" rel="stylesheet">
+	<link href="{% static 'sync/css/font3.css' %}" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="{% static 'collections/css/plugins.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'collections/css/custom.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'collections/css/modalbox.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'collections/css/main.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'sync/css/plugins.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'sync/css/custom.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'sync/css/modalbox.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'sync/css/main.css' %}" />
 
-	<script type="text/javascript" src="{% static 'collections/js/modernizr.custom.js' %}"></script>
+	<script type="text/javascript" src="{% static 'sync/js/modernizr.custom.js' %}"></script>
 </head>
 
 <body>
@@ -40,8 +40,8 @@
 		<div class="elisc_tm_topbar fixed top-0 left-0 right-0 h-[50px] bg-white z-[15] hidden">
 			<div class="topbar_inner w-full h-full clear-both flex items-center justify-between py-0 px-[20px]">
 				<div> <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
-					<a class="image" href="#"><img class="max-w-[100px] max-h-[40px]" style="margin:auto"
-												   src="{% static 'collections/images/logo.png' %}" alt="" /></a>
+					<a class="image" href="#"><img class="max-w-[70px]" style="margin:auto"
+												   src="{% static 'sync/images/logo.png' %}" alt="" /></a>
 				</div>
 				<div class="trigger">
 					<div class="hamburger hamburger--slider">
@@ -58,7 +58,8 @@
 					<div class="menu_list w-full h-auto clear-both float-left mb-[50px]">
 						<ul class="transition_link m-0">
 							<li class="active mb-[7px]"><a class="text-dark-color" href="#home">Home</a></li>
-							<li class="mb-[7px]"><a class="text-dark-color" href="#collections">Collections</a></li>
+							<li class="mb-[7px]"><a class="text-dark-color" href="#collections">collections</a></li>
+							<li class="mb-[7px]"><a class="text-dark-color" href="#schedules">schedules</a></li>
 							<li class="mb-[7px]"><a class="text-dark-color" href="{% url 'index' %}">Back</a></li>
 						</ul>
 					</div>
@@ -74,15 +75,16 @@
 		<!-- SIDEBAR -->
 		<div class="elisc_tm_sidebar w-[370px] h-[100vh] fixed left-0 top-0 border-solid border-[rgba(85,82,124,.1)] border-r">
 			<div class="sidebar_inner w-full float-left h-auto clear-both text-center">
-				<div class="author w-full float-left pt-[60px]">
+				<div class="author w-full float-left pt-[32px]">
 					<div class="image relative inline-block">
-						<img class="relative w-full" src="{% static 'collections/images/logo.png' %}" alt="" />
+						<img class="relative w-full" src="{% static 'sync/images/logo.png' %}" alt="" />
 					</div>
 				</div>
 				<div class="menu scrollable w-full float-left">
 					<ul class="transition_link h-full flex items-center justify-center flex-col">
 						<li class="active mb-[15px]"><a href="#home">Home</a></li>
 						<li class="mb-[15px]"><a href="#collections">Collections</a></li>
+						<li class="mb-[15px]"><a href="#schedules">Schedules</a></li>
 						<li class="mb-[15px]"><a href="{% url 'index' %}">Back</a></li>
 					</ul>
 				</div>
@@ -106,28 +108,20 @@
 							<div class="details w-full min-h-[100vh] flex items-center">
 								<div class="left w-1/2">
 									<div class="title w-full float-left mb-[21px]">
-										<h3 class="font-extrabold text-[60px] leading-[70px]">Welcome to<br><span class="text-blue-color">D&W</span> Collections!</br></h3>
+										<h3 class="font-extrabold text-[60px] leading-[70px]">Sync our</h3>
 										<h3 class="font-extrabold text-[60px] leading-[70px]">
 											<span class="cd-headline clip"> <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
-												<span class="blc">We've got</span>
-												<span class="cd-words-wrapper">
-												  <b class="is-visible">{{ first_cat }}</b>
-												  {% for category in categories %}
-													<b>{{ category }}</b>
-												  {% endfor %}
-													<b>Other</b>
+												<span class="cd-words-wrapper text-blue-color">
+													<b class="is-visible">Collections</b>
+													<b>Schedules</b>
 												</span>
 											</span>
 										</h3>
-									</div>
-									<div class="buttons w-full float-left flex items-center mb-[150px]">
-										<div class="elisc_tm_button transition_link">
-											<a href="#collections">Take a look</a>
-										</div>
+										<h3 class="font-extrabold text-[60px] leading-[70px]">Here!</br></h3>
 									</div>
 								</div>
 								<div class="right w-1/2 pl-[50px]">
-									<img src="{% static 'collections/images/2.png' %}" alt="" />
+									<img src="{% static 'sync/images/2.png' %}" alt="" />
 								</div>
 							</div>
 						</div>
@@ -135,14 +129,14 @@
 				</div>
 				<!-- /HOME -->
 
-				<!-- COLLECTIONS -->
+				<!-- sync -->
 				<div class="elisc_tm_section" id="collections">
 					{% for key, value in collections.items %}
 					<div class="elisc_tm_services w-full float-left pt-[110px]">
 						<div class="tm_content w-full max-w-[1250px] h-auto clear-both my-0 mx-auto py-0 px-[20px]">
 							<div class="elisc_tm_service_title w-full float-left flex justify-between items-end">
 								<div class="elisc_tm_title w-auto float-left">
-									<span class="w-full float-left font-medium uppercase inline-block mb-[12px]">- D&W Collections</span>
+									<span class="w-full float-left font-medium uppercase inline-block mb-[12px]">- D&W sync</span>
 									<h3 class="text-[40px] font-extrabold">{{ key }}</h3>
 								</div>
 							</div>
@@ -160,7 +154,7 @@
 													<p class="text-[#55527C] opacity-[0.7]">{{ website.content }}</p>
 												</div>
 												<div class="elisc_tm_read_more">
-													<a href="#">Read More<span class="inline-block"><img class="svg" src="{% static 'collections/images/rightArrow.svg' %}" alt="" /></span></a>
+													<a href="#">Read More<span class="inline-block"><img class="svg" src="{% static 'sync/images/rightArrow.svg' %}" alt="" /></span></a>
 												</div>
 											</div>
 											<a class="elisc_tm_full_link absolute inset-0 z-[5]" href="#"></a>
@@ -185,7 +179,7 @@
 						<div class="tm_content w-full max-w-[1250px] h-auto clear-both my-0 mx-auto py-0 px-[20px]">
 							<div class="elisc_tm_service_title w-full float-left flex justify-between items-end">
 								<div class="elisc_tm_title w-auto float-left">
-									<span class="w-full float-left font-medium uppercase inline-block mb-[12px]">- D&W Collections</span>
+									<span class="w-full float-left font-medium uppercase inline-block mb-[12px]">- D&W sync</span>
 									<h3 class="text-[40px] font-extrabold">Other</h3>
 								</div>
 							</div>
@@ -203,7 +197,7 @@
 													<p class="text-[#55527C] opacity-[0.7]">{{ website.content }}</p>
 												</div>
 												<div class="elisc_tm_read_more">
-													<a href="#">Read More<span class="inline-block"><img class="svg" src="{% static 'collections/images/rightArrow.svg' %}" alt="" /></span></a>
+													<a href="#">Read More<span class="inline-block"><img class="svg" src="{% static 'sync/images/rightArrow.svg' %}" alt="" /></span></a>
 												</div>
 											</div>
 											<a class="elisc_tm_full_link absolute inset-0 z-[5]" href="#"></a>
@@ -224,7 +218,12 @@
 						</div>
 					</div>
 				</div>
+
 				<!-- /SERVICES -->
+				<div class="elisc_tm_section" id="schedules">
+					<div class="elfsight-app-6f461946-be4a-4dc4-8140-61cd17ae6fab"
+						 style="width:90%;margin:auto;margin-top:70px" data-elfsight-app-lazy></div>
+				</div>
 			</div>
 		</div>
 		<!-- /MAINPART -->
@@ -233,9 +232,10 @@
 	<!-- / WRAPPER ALL -->
 	
 <!-- SCRIPTS -->
-<script src="{% static 'collections/js/jquery.js' %}"></script>
-<script src="{% static 'collections/js/plugins.js' %}"></script>
-<script src="{% static 'collections/js/init.js' %}"></script>
+<script src="{% static 'sync/js/jquery.js' %}"></script>
+<script src="{% static 'sync/js/plugins.js' %}"></script>
+<script src="{% static 'sync/js/init.js' %}"></script>
+<script src="{% static 'js/platform.js' %}" data-use-service-core defer></script>
 <!-- /SCRIPTS -->
 
 </body>

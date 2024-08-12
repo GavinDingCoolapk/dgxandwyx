@@ -631,7 +631,7 @@ h6 {
   }
 
   .elisc_tm_sidebar .author .image {
-    width: 90px;
+    width: 120px;
   }
 
   .elisc_tm_sidebar .name .back {
@@ -1741,8 +1741,20 @@ h6 {
   min-width: 100%;
 }
 
+.max-w-\[70px\] {
+  max-width: 70px;
+}
+
 .max-w-\[100px\] {
   max-width: 100px;
+}
+
+.max-w-\[150px\] {
+    max-width: 150px;
+}
+
+.max-w-\[200px\] {
+    max-width: 200px;
 }
 
 .max-w-\[1250px\] {

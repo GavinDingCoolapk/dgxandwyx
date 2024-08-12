@@ -101,7 +101,7 @@ def send_wishes(request):
         return render(request, "wishes_received.html")
 
 
-def collections(request):
+def sync(request):
     collectionss = {}
     categories = []
     for cat in models.Website.objects.values("category").distinct():
@@ -115,8 +115,7 @@ def collections(request):
          "collections": collectionss,
          "other_collection": other_collection,
          }
-    # return HttpResponse("hello")
-    return render(request, "collections.html", c)
+    return render(request, "sync.html", c)
 
 
 def about(request):
