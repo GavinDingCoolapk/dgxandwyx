@@ -113,8 +113,9 @@
 												<span class="cd-words-wrapper">
 												  <b class="is-visible">{{ first_cat }}</b>
 												  {% for category in categories %}
-												  <b>{{ category }}</b>
+													<b>{{ category }}</b>
 												  {% endfor %}
+													<b>Other</b>
 												</span>
 											</span>
 										</h3>
@@ -180,6 +181,48 @@
 						</div>
 					</div>
 					{% endfor %}
+					<div class="elisc_tm_services w-full float-left pt-[110px]">
+						<div class="tm_content w-full max-w-[1250px] h-auto clear-both my-0 mx-auto py-0 px-[20px]">
+							<div class="elisc_tm_service_title w-full float-left flex justify-between items-end">
+								<div class="elisc_tm_title w-auto float-left">
+									<span class="w-full float-left font-medium uppercase inline-block mb-[12px]">- D&W Collections</span>
+									<h3 class="text-[40px] font-extrabold">Other</h3>
+								</div>
+							</div>
+							<div class="service_list w-full float-left mt-[40px] mb-[50px]">
+								<ul class="ml-[-30px] flex flex-wrap">
+									{% for website in other_collection %}
+									<li class="mb-[30px] pl-[30px] w-1/3 float-left">
+										<div class="list_inner w-full float-left clear-both h-full relative px-[40px] pt-[32px] pb-[55px] rounded-[4px]">
+											<div class="details w-full float-left relative z-[1]">
+												<div class="title w-full float-left mb-[13px]">
+													<span class="font-inter font-medium text-[20px] text-[rgba(19,15,73,.5)] inline-block mb-[15px]">{{ forloop.counter }}</span>
+													<h3 class="text-[20px]">{{ website.title }}</h3>
+												</div>
+												<div class="text w-full float-left mb-[25px]">
+													<p class="text-[#55527C] opacity-[0.7]">{{ website.content }}</p>
+												</div>
+												<div class="elisc_tm_read_more">
+													<a href="#">Read More<span class="inline-block"><img class="svg" src="{% static 'collections/images/rightArrow.svg' %}" alt="" /></span></a>
+												</div>
+											</div>
+											<a class="elisc_tm_full_link absolute inset-0 z-[5]" href="#"></a>
+
+											<!-- Modalbox Info Start -->
+											<div class="hidden_details">
+												<div class="descriptions">
+													<p>{{ website.content }}</p>
+												</div>
+												<a href="{{ website.link }}"> Visit >>></a>
+											</div>
+											<!-- /Modalbox Info Start -->
+										</div>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- /SERVICES -->
 			</div>

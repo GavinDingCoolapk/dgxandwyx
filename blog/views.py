@@ -105,11 +105,15 @@ def collections(request):
     collectionss = {}
     categories = []
     for cat in models.Website.objects.values("category").distinct():
+        if cat["category"] == "Other":
+            continue
         collectionss[cat["category"]] = models.Website.objects.filter(category=cat["category"]).order_by("-id")
         categories.append(cat["category"])
+    other_collection = models.Website.objects.filter(category="Other")
     c = {"first_cat": categories[0],
          "categories": categories[1:],
          "collections": collectionss,
+         "other_collection": other_collection,
          }
     # return HttpResponse("hello")
     return render(request, "collections.html", c)
